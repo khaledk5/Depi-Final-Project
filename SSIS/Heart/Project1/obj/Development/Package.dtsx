@@ -1,0 +1,2184 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="9/26/2024 8:50:56 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="LAPTOP-LVUEN91N"
+  DTS:CreatorName="LAPTOP-LVUEN91N\user"
+  DTS:DTSID="{792CAD47-02F8-4FB5-B67F-C252AB3D019F}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5556.0"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Package"
+  DTS:PackageType="5"
+  DTS:VersionBuild="8"
+  DTS:VersionGUID="{45A2482A-4DB3-4B0A-9C9E-AF8783092267}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Excel Conc Heart1]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{46C685E3-48E8-46CD-8E0A-98A94C11D7E6}"
+      DTS:ObjectName="Excel Conc Heart1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="0"
+          DTS:ConnectRetryInterval="0"
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.16.0;Data Source=D:\Final Project\heart\Heart1.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Excel Conc Heart2]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{B3C632EC-3738-4031-85AD-ACA870EA1D6C}"
+      DTS:ObjectName="Excel Conc Heart2">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="0"
+          DTS:ConnectRetryInterval="0"
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.16.0;Data Source=D:\Final Project\heart\Heart2.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Excel Conc Heart3]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{2329CED5-7677-415A-BACB-9AD6A0E48384}"
+      DTS:ObjectName="Excel Conc Heart3">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="0"
+          DTS:ConnectRetryInterval="0"
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.16.0;Data Source=D:\Final Project\heart\Heart3.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Excel Connection Manager]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{C3120D7E-C93A-4140-8102-FC3F9BFD1787}"
+      DTS:ObjectName="Excel Connection Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="0"
+          DTS:ConnectRetryInterval="0"
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.16.0;Data Source=D:\Final Project\heart\all2.xls;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Heart data flow"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{7A027F7E-9EB2-46A7-BD44-0446524E835F}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Heart data flow"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Heart data flow\Excel Destination"
+              componentClassID="Microsoft.ExcelDestination"
+              contactInfo="Excel Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Excel Destination"
+              name="Excel Destination"
+              usesDispositions="true">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">Excel_Destination$</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Heart data flow\Excel Destination.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Excel Connection Manager]"
+                  connectionManagerRefId="Package.ConnectionManagers[Excel Connection Manager]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Heart data flow\Excel Destination.Inputs[Excel Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Excel Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Heart data flow\Excel Destination.Inputs[Excel Destination Input].Columns[age]"
+                      cachedDataType="r8"
+                      cachedName="age"
+                      externalMetadataColumnId="Package\Heart data flow\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[age]"
+                      lineageId="Package\Heart data flow\Union All.Outputs[Union All Output 1].Columns[age]" />
+                    <inputColumn
+                      refId="Package\Heart data flow\Excel Destination.Inputs[Excel Destination Input].Columns[sex]"
+                      cachedDataType="r8"
+                      cachedName="sex"
+                      externalMetadataColumnId="Package\Heart data flow\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[sex]"
+                      lineageId="Package\Heart data flow\Union All.Outputs[Union All Output 1].Columns[sex]" />
+                    <inputColumn
+                      refId="Package\Heart data flow\Excel Destination.Inputs[Excel Destination Input].Columns[oldpeak]"
+                      cachedDataType="r8"
+                      cachedName="oldpeak"
+                      externalMetadataColumnId="Package\Heart data flow\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[oldpeak]"
+                      lineageId="Package\Heart data flow\Union All.Outputs[Union All Output 1].Columns[oldpeak]" />
+                    <inputColumn
+                      refId="Package\Heart data flow\Excel Destination.Inputs[Excel Destination Input].Columns[ChestPainType]"
+                      cachedDataType="r8"
+                      cachedName="ChestPainType"
+                      externalMetadataColumnId="Package\Heart data flow\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[ChestPainType]"
+                      lineageId="Package\Heart data flow\Union All.Outputs[Union All Output 1].Columns[ChestPainType]" />
+                    <inputColumn
+                      refId="Package\Heart data flow\Excel Destination.Inputs[Excel Destination Input].Columns[RestingBP]"
+                      cachedDataType="r8"
+                      cachedName="RestingBP"
+                      externalMetadataColumnId="Package\Heart data flow\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[RestingBP]"
+                      lineageId="Package\Heart data flow\Union All.Outputs[Union All Output 1].Columns[RestingBP]" />
+                    <inputColumn
+                      refId="Package\Heart data flow\Excel Destination.Inputs[Excel Destination Input].Columns[Cholesterol]"
+                      cachedDataType="r8"
+                      cachedName="Cholesterol"
+                      externalMetadataColumnId="Package\Heart data flow\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[Cholesterol]"
+                      lineageId="Package\Heart data flow\Union All.Outputs[Union All Output 1].Columns[Cholesterol]" />
+                    <inputColumn
+                      refId="Package\Heart data flow\Excel Destination.Inputs[Excel Destination Input].Columns[FastingBS]"
+                      cachedDataType="r8"
+                      cachedName="FastingBS"
+                      externalMetadataColumnId="Package\Heart data flow\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[FastingBS]"
+                      lineageId="Package\Heart data flow\Union All.Outputs[Union All Output 1].Columns[FastingBS]" />
+                    <inputColumn
+                      refId="Package\Heart data flow\Excel Destination.Inputs[Excel Destination Input].Columns[RestingECG]"
+                      cachedDataType="r8"
+                      cachedName="RestingECG"
+                      externalMetadataColumnId="Package\Heart data flow\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[RestingECG]"
+                      lineageId="Package\Heart data flow\Union All.Outputs[Union All Output 1].Columns[RestingECG]" />
+                    <inputColumn
+                      refId="Package\Heart data flow\Excel Destination.Inputs[Excel Destination Input].Columns[MaxHR]"
+                      cachedDataType="r8"
+                      cachedName="MaxHR"
+                      externalMetadataColumnId="Package\Heart data flow\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[MaxHR]"
+                      lineageId="Package\Heart data flow\Union All.Outputs[Union All Output 1].Columns[MaxHR]" />
+                    <inputColumn
+                      refId="Package\Heart data flow\Excel Destination.Inputs[Excel Destination Input].Columns[ExerciseAngina]"
+                      cachedDataType="r8"
+                      cachedName="ExerciseAngina"
+                      externalMetadataColumnId="Package\Heart data flow\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[ExerciseAngina]"
+                      lineageId="Package\Heart data flow\Union All.Outputs[Union All Output 1].Columns[ExerciseAngina]" />
+                    <inputColumn
+                      refId="Package\Heart data flow\Excel Destination.Inputs[Excel Destination Input].Columns[ST_Slope]"
+                      cachedDataType="r8"
+                      cachedName="ST_Slope"
+                      externalMetadataColumnId="Package\Heart data flow\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[ST_Slope]"
+                      lineageId="Package\Heart data flow\Union All.Outputs[Union All Output 1].Columns[ST_Slope]" />
+                    <inputColumn
+                      refId="Package\Heart data flow\Excel Destination.Inputs[Excel Destination Input].Columns[number of major vessels]"
+                      cachedDataType="r8"
+                      cachedName="number of major vessels"
+                      externalMetadataColumnId="Package\Heart data flow\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[number of major vessels]"
+                      lineageId="Package\Heart data flow\Union All.Outputs[Union All Output 1].Columns[number of major vessels]" />
+                    <inputColumn
+                      refId="Package\Heart data flow\Excel Destination.Inputs[Excel Destination Input].Columns[Thal rate]"
+                      cachedDataType="r8"
+                      cachedName="Thal rate"
+                      externalMetadataColumnId="Package\Heart data flow\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[Thal rate]"
+                      lineageId="Package\Heart data flow\Union All.Outputs[Union All Output 1].Columns[Thal rate]" />
+                    <inputColumn
+                      refId="Package\Heart data flow\Excel Destination.Inputs[Excel Destination Input].Columns[condition]"
+                      cachedDataType="r8"
+                      cachedName="condition"
+                      externalMetadataColumnId="Package\Heart data flow\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[condition]"
+                      lineageId="Package\Heart data flow\Union All.Outputs[Union All Output 1].Columns[condition]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Heart data flow\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[age]"
+                      dataType="wstr"
+                      length="255"
+                      name="age" />
+                    <externalMetadataColumn
+                      refId="Package\Heart data flow\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[sex]"
+                      dataType="wstr"
+                      length="255"
+                      name="sex" />
+                    <externalMetadataColumn
+                      refId="Package\Heart data flow\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[oldpeak]"
+                      dataType="wstr"
+                      length="255"
+                      name="oldpeak" />
+                    <externalMetadataColumn
+                      refId="Package\Heart data flow\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[ChestPainType]"
+                      dataType="wstr"
+                      length="255"
+                      name="ChestPainType" />
+                    <externalMetadataColumn
+                      refId="Package\Heart data flow\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[RestingBP]"
+                      dataType="wstr"
+                      length="255"
+                      name="RestingBP" />
+                    <externalMetadataColumn
+                      refId="Package\Heart data flow\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[Cholesterol]"
+                      dataType="wstr"
+                      length="255"
+                      name="Cholesterol" />
+                    <externalMetadataColumn
+                      refId="Package\Heart data flow\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[FastingBS]"
+                      dataType="wstr"
+                      length="255"
+                      name="FastingBS" />
+                    <externalMetadataColumn
+                      refId="Package\Heart data flow\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[RestingECG]"
+                      dataType="wstr"
+                      length="255"
+                      name="RestingECG" />
+                    <externalMetadataColumn
+                      refId="Package\Heart data flow\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[MaxHR]"
+                      dataType="wstr"
+                      length="255"
+                      name="MaxHR" />
+                    <externalMetadataColumn
+                      refId="Package\Heart data flow\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[ExerciseAngina]"
+                      dataType="wstr"
+                      length="255"
+                      name="ExerciseAngina" />
+                    <externalMetadataColumn
+                      refId="Package\Heart data flow\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[ST_Slope]"
+                      dataType="wstr"
+                      length="255"
+                      name="ST_Slope" />
+                    <externalMetadataColumn
+                      refId="Package\Heart data flow\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[number of major vessels]"
+                      dataType="wstr"
+                      length="255"
+                      name="number of major vessels" />
+                    <externalMetadataColumn
+                      refId="Package\Heart data flow\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[Thal rate]"
+                      dataType="wstr"
+                      length="255"
+                      name="Thal rate" />
+                    <externalMetadataColumn
+                      refId="Package\Heart data flow\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[condition]"
+                      dataType="wstr"
+                      length="255"
+                      name="condition" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Heart data flow\Excel Destination.Outputs[Excel Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Excel Destination Error Output"
+                  synchronousInputId="Package\Heart data flow\Excel Destination.Inputs[Excel Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Heart data flow\Excel Destination.Outputs[Excel Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Heart data flow\Excel Destination.Outputs[Excel Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Heart data flow\Excel Destination.Outputs[Excel Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Heart data flow\Excel Destination.Outputs[Excel Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Heart data flow\Excel Source"
+              componentClassID="Microsoft.ExcelSource"
+              contactInfo="Excel Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Excel Source"
+              name="Excel Source"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">heart$</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mapping from parameters in the SQL command to variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Heart data flow\Excel Source.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Excel Conc Heart1]"
+                  connectionManagerRefId="Package.ConnectionManagers[Excel Conc Heart1]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Heart data flow\Excel Source.Outputs[Excel Source Output]"
+                  name="Excel Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Heart data flow\Excel Source.Outputs[Excel Source Output].Columns[age]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Heart data flow\Excel Source.Outputs[Excel Source Output].ExternalColumns[age]"
+                      lineageId="Package\Heart data flow\Excel Source.Outputs[Excel Source Output].Columns[age]"
+                      name="age"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Heart data flow\Excel Source.Outputs[Excel Source Output].Columns[sex]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Heart data flow\Excel Source.Outputs[Excel Source Output].ExternalColumns[sex]"
+                      lineageId="Package\Heart data flow\Excel Source.Outputs[Excel Source Output].Columns[sex]"
+                      name="sex"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Heart data flow\Excel Source.Outputs[Excel Source Output].Columns[oldpeak]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Heart data flow\Excel Source.Outputs[Excel Source Output].ExternalColumns[oldpeak]"
+                      lineageId="Package\Heart data flow\Excel Source.Outputs[Excel Source Output].Columns[oldpeak]"
+                      name="oldpeak"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Heart data flow\Excel Source.Outputs[Excel Source Output].Columns[ChestPainType]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Heart data flow\Excel Source.Outputs[Excel Source Output].ExternalColumns[ChestPainType]"
+                      lineageId="Package\Heart data flow\Excel Source.Outputs[Excel Source Output].Columns[ChestPainType]"
+                      name="ChestPainType"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Heart data flow\Excel Source.Outputs[Excel Source Output].Columns[RestingBP]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Heart data flow\Excel Source.Outputs[Excel Source Output].ExternalColumns[RestingBP]"
+                      lineageId="Package\Heart data flow\Excel Source.Outputs[Excel Source Output].Columns[RestingBP]"
+                      name="RestingBP"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Heart data flow\Excel Source.Outputs[Excel Source Output].Columns[Cholesterol]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Heart data flow\Excel Source.Outputs[Excel Source Output].ExternalColumns[Cholesterol]"
+                      lineageId="Package\Heart data flow\Excel Source.Outputs[Excel Source Output].Columns[Cholesterol]"
+                      name="Cholesterol"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Heart data flow\Excel Source.Outputs[Excel Source Output].Columns[FastingBS]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Heart data flow\Excel Source.Outputs[Excel Source Output].ExternalColumns[FastingBS]"
+                      lineageId="Package\Heart data flow\Excel Source.Outputs[Excel Source Output].Columns[FastingBS]"
+                      name="FastingBS"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Heart data flow\Excel Source.Outputs[Excel Source Output].Columns[RestingECG]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Heart data flow\Excel Source.Outputs[Excel Source Output].ExternalColumns[RestingECG]"
+                      lineageId="Package\Heart data flow\Excel Source.Outputs[Excel Source Output].Columns[RestingECG]"
+                      name="RestingECG"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Heart data flow\Excel Source.Outputs[Excel Source Output].Columns[MaxHR]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Heart data flow\Excel Source.Outputs[Excel Source Output].ExternalColumns[MaxHR]"
+                      lineageId="Package\Heart data flow\Excel Source.Outputs[Excel Source Output].Columns[MaxHR]"
+                      name="MaxHR"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Heart data flow\Excel Source.Outputs[Excel Source Output].Columns[ExerciseAngina]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Heart data flow\Excel Source.Outputs[Excel Source Output].ExternalColumns[ExerciseAngina]"
+                      lineageId="Package\Heart data flow\Excel Source.Outputs[Excel Source Output].Columns[ExerciseAngina]"
+                      name="ExerciseAngina"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Heart data flow\Excel Source.Outputs[Excel Source Output].Columns[ST_Slope]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Heart data flow\Excel Source.Outputs[Excel Source Output].ExternalColumns[ST_Slope]"
+                      lineageId="Package\Heart data flow\Excel Source.Outputs[Excel Source Output].Columns[ST_Slope]"
+                      name="ST_Slope"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Heart data flow\Excel Source.Outputs[Excel Source Output].Columns[number of major vessels]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Heart data flow\Excel Source.Outputs[Excel Source Output].ExternalColumns[number of major vessels]"
+                      lineageId="Package\Heart data flow\Excel Source.Outputs[Excel Source Output].Columns[number of major vessels]"
+                      name="number of major vessels"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Heart data flow\Excel Source.Outputs[Excel Source Output].Columns[Thal rate]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Heart data flow\Excel Source.Outputs[Excel Source Output].ExternalColumns[Thal rate]"
+                      lineageId="Package\Heart data flow\Excel Source.Outputs[Excel Source Output].Columns[Thal rate]"
+                      name="Thal rate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Heart data flow\Excel Source.Outputs[Excel Source Output].Columns[condition]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Heart data flow\Excel Source.Outputs[Excel Source Output].ExternalColumns[condition]"
+                      lineageId="Package\Heart data flow\Excel Source.Outputs[Excel Source Output].Columns[condition]"
+                      name="condition"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Heart data flow\Excel Source.Outputs[Excel Source Output].ExternalColumns[age]"
+                      dataType="r8"
+                      name="age" />
+                    <externalMetadataColumn
+                      refId="Package\Heart data flow\Excel Source.Outputs[Excel Source Output].ExternalColumns[sex]"
+                      dataType="r8"
+                      name="sex" />
+                    <externalMetadataColumn
+                      refId="Package\Heart data flow\Excel Source.Outputs[Excel Source Output].ExternalColumns[oldpeak]"
+                      dataType="r8"
+                      name="oldpeak" />
+                    <externalMetadataColumn
+                      refId="Package\Heart data flow\Excel Source.Outputs[Excel Source Output].ExternalColumns[ChestPainType]"
+                      dataType="r8"
+                      name="ChestPainType" />
+                    <externalMetadataColumn
+                      refId="Package\Heart data flow\Excel Source.Outputs[Excel Source Output].ExternalColumns[RestingBP]"
+                      dataType="r8"
+                      name="RestingBP" />
+                    <externalMetadataColumn
+                      refId="Package\Heart data flow\Excel Source.Outputs[Excel Source Output].ExternalColumns[Cholesterol]"
+                      dataType="r8"
+                      name="Cholesterol" />
+                    <externalMetadataColumn
+                      refId="Package\Heart data flow\Excel Source.Outputs[Excel Source Output].ExternalColumns[FastingBS]"
+                      dataType="r8"
+                      name="FastingBS" />
+                    <externalMetadataColumn
+                      refId="Package\Heart data flow\Excel Source.Outputs[Excel Source Output].ExternalColumns[RestingECG]"
+                      dataType="r8"
+                      name="RestingECG" />
+                    <externalMetadataColumn
+                      refId="Package\Heart data flow\Excel Source.Outputs[Excel Source Output].ExternalColumns[MaxHR]"
+                      dataType="r8"
+                      name="MaxHR" />
+                    <externalMetadataColumn
+                      refId="Package\Heart data flow\Excel Source.Outputs[Excel Source Output].ExternalColumns[ExerciseAngina]"
+                      dataType="r8"
+                      name="ExerciseAngina" />
+                    <externalMetadataColumn
+                      refId="Package\Heart data flow\Excel Source.Outputs[Excel Source Output].ExternalColumns[ST_Slope]"
+                      dataType="r8"
+                      name="ST_Slope" />
+                    <externalMetadataColumn
+                      refId="Package\Heart data flow\Excel Source.Outputs[Excel Source Output].ExternalColumns[number of major vessels]"
+                      dataType="r8"
+                      name="number of major vessels" />
+                    <externalMetadataColumn
+                      refId="Package\Heart data flow\Excel Source.Outputs[Excel Source Output].ExternalColumns[Thal rate]"
+                      dataType="r8"
+                      name="Thal rate" />
+                    <externalMetadataColumn
+                      refId="Package\Heart data flow\Excel Source.Outputs[Excel Source Output].ExternalColumns[condition]"
+                      dataType="r8"
+                      name="condition" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Heart data flow\Excel Source.Outputs[Excel Source Error Output]"
+                  isErrorOut="true"
+                  name="Excel Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Heart data flow\Excel Source.Outputs[Excel Source Error Output].Columns[age]"
+                      dataType="r8"
+                      lineageId="Package\Heart data flow\Excel Source.Outputs[Excel Source Error Output].Columns[age]"
+                      name="age" />
+                    <outputColumn
+                      refId="Package\Heart data flow\Excel Source.Outputs[Excel Source Error Output].Columns[sex]"
+                      dataType="r8"
+                      lineageId="Package\Heart data flow\Excel Source.Outputs[Excel Source Error Output].Columns[sex]"
+                      name="sex" />
+                    <outputColumn
+                      refId="Package\Heart data flow\Excel Source.Outputs[Excel Source Error Output].Columns[ChestPainType]"
+                      dataType="r8"
+                      lineageId="Package\Heart data flow\Excel Source.Outputs[Excel Source Error Output].Columns[ChestPainType]"
+                      name="ChestPainType" />
+                    <outputColumn
+                      refId="Package\Heart data flow\Excel Source.Outputs[Excel Source Error Output].Columns[RestingBP]"
+                      dataType="r8"
+                      lineageId="Package\Heart data flow\Excel Source.Outputs[Excel Source Error Output].Columns[RestingBP]"
+                      name="RestingBP" />
+                    <outputColumn
+                      refId="Package\Heart data flow\Excel Source.Outputs[Excel Source Error Output].Columns[Cholesterol]"
+                      dataType="r8"
+                      lineageId="Package\Heart data flow\Excel Source.Outputs[Excel Source Error Output].Columns[Cholesterol]"
+                      name="Cholesterol" />
+                    <outputColumn
+                      refId="Package\Heart data flow\Excel Source.Outputs[Excel Source Error Output].Columns[FastingBS]"
+                      dataType="r8"
+                      lineageId="Package\Heart data flow\Excel Source.Outputs[Excel Source Error Output].Columns[FastingBS]"
+                      name="FastingBS" />
+                    <outputColumn
+                      refId="Package\Heart data flow\Excel Source.Outputs[Excel Source Error Output].Columns[RestingECG]"
+                      dataType="r8"
+                      lineageId="Package\Heart data flow\Excel Source.Outputs[Excel Source Error Output].Columns[RestingECG]"
+                      name="RestingECG" />
+                    <outputColumn
+                      refId="Package\Heart data flow\Excel Source.Outputs[Excel Source Error Output].Columns[MaxHR]"
+                      dataType="r8"
+                      lineageId="Package\Heart data flow\Excel Source.Outputs[Excel Source Error Output].Columns[MaxHR]"
+                      name="MaxHR" />
+                    <outputColumn
+                      refId="Package\Heart data flow\Excel Source.Outputs[Excel Source Error Output].Columns[ExerciseAngina]"
+                      dataType="r8"
+                      lineageId="Package\Heart data flow\Excel Source.Outputs[Excel Source Error Output].Columns[ExerciseAngina]"
+                      name="ExerciseAngina" />
+                    <outputColumn
+                      refId="Package\Heart data flow\Excel Source.Outputs[Excel Source Error Output].Columns[oldpeak]"
+                      dataType="r8"
+                      lineageId="Package\Heart data flow\Excel Source.Outputs[Excel Source Error Output].Columns[oldpeak]"
+                      name="oldpeak" />
+                    <outputColumn
+                      refId="Package\Heart data flow\Excel Source.Outputs[Excel Source Error Output].Columns[ST_Slope]"
+                      dataType="r8"
+                      lineageId="Package\Heart data flow\Excel Source.Outputs[Excel Source Error Output].Columns[ST_Slope]"
+                      name="ST_Slope" />
+                    <outputColumn
+                      refId="Package\Heart data flow\Excel Source.Outputs[Excel Source Error Output].Columns[number of major vessels]"
+                      dataType="r8"
+                      lineageId="Package\Heart data flow\Excel Source.Outputs[Excel Source Error Output].Columns[number of major vessels]"
+                      name="number of major vessels" />
+                    <outputColumn
+                      refId="Package\Heart data flow\Excel Source.Outputs[Excel Source Error Output].Columns[Thal rate]"
+                      dataType="r8"
+                      lineageId="Package\Heart data flow\Excel Source.Outputs[Excel Source Error Output].Columns[Thal rate]"
+                      name="Thal rate" />
+                    <outputColumn
+                      refId="Package\Heart data flow\Excel Source.Outputs[Excel Source Error Output].Columns[condition]"
+                      dataType="r8"
+                      lineageId="Package\Heart data flow\Excel Source.Outputs[Excel Source Error Output].Columns[condition]"
+                      name="condition" />
+                    <outputColumn
+                      refId="Package\Heart data flow\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Heart data flow\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Heart data flow\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Heart data flow\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Heart data flow\Excel Source 1"
+              componentClassID="Microsoft.ExcelSource"
+              contactInfo="Excel Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Excel Source"
+              name="Excel Source 1"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">heart_cleveland_upload$</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mapping from parameters in the SQL command to variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Heart data flow\Excel Source 1.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Excel Conc Heart2]"
+                  connectionManagerRefId="Package.ConnectionManagers[Excel Conc Heart2]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Heart data flow\Excel Source 1.Outputs[Excel Source Output]"
+                  name="Excel Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Heart data flow\Excel Source 1.Outputs[Excel Source Output].Columns[age]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Heart data flow\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[age]"
+                      lineageId="Package\Heart data flow\Excel Source 1.Outputs[Excel Source Output].Columns[age]"
+                      name="age"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Heart data flow\Excel Source 1.Outputs[Excel Source Output].Columns[sex]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Heart data flow\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[sex]"
+                      lineageId="Package\Heart data flow\Excel Source 1.Outputs[Excel Source Output].Columns[sex]"
+                      name="sex"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Heart data flow\Excel Source 1.Outputs[Excel Source Output].Columns[oldpeak]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Heart data flow\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[oldpeak]"
+                      lineageId="Package\Heart data flow\Excel Source 1.Outputs[Excel Source Output].Columns[oldpeak]"
+                      name="oldpeak"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Heart data flow\Excel Source 1.Outputs[Excel Source Output].Columns[condition]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Heart data flow\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[condition]"
+                      lineageId="Package\Heart data flow\Excel Source 1.Outputs[Excel Source Output].Columns[condition]"
+                      name="condition"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Heart data flow\Excel Source 1.Outputs[Excel Source Output].Columns[ChestPainType]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Heart data flow\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[ChestPainType]"
+                      lineageId="Package\Heart data flow\Excel Source 1.Outputs[Excel Source Output].Columns[ChestPainType]"
+                      name="ChestPainType"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Heart data flow\Excel Source 1.Outputs[Excel Source Output].Columns[RestingBP]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Heart data flow\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[RestingBP]"
+                      lineageId="Package\Heart data flow\Excel Source 1.Outputs[Excel Source Output].Columns[RestingBP]"
+                      name="RestingBP"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Heart data flow\Excel Source 1.Outputs[Excel Source Output].Columns[Cholesterol]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Heart data flow\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[Cholesterol]"
+                      lineageId="Package\Heart data flow\Excel Source 1.Outputs[Excel Source Output].Columns[Cholesterol]"
+                      name="Cholesterol"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Heart data flow\Excel Source 1.Outputs[Excel Source Output].Columns[FastingBS]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Heart data flow\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[FastingBS]"
+                      lineageId="Package\Heart data flow\Excel Source 1.Outputs[Excel Source Output].Columns[FastingBS]"
+                      name="FastingBS"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Heart data flow\Excel Source 1.Outputs[Excel Source Output].Columns[RestingECG]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Heart data flow\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[RestingECG]"
+                      lineageId="Package\Heart data flow\Excel Source 1.Outputs[Excel Source Output].Columns[RestingECG]"
+                      name="RestingECG"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Heart data flow\Excel Source 1.Outputs[Excel Source Output].Columns[MaxHR]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Heart data flow\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[MaxHR]"
+                      lineageId="Package\Heart data flow\Excel Source 1.Outputs[Excel Source Output].Columns[MaxHR]"
+                      name="MaxHR"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Heart data flow\Excel Source 1.Outputs[Excel Source Output].Columns[ExerciseAngina]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Heart data flow\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[ExerciseAngina]"
+                      lineageId="Package\Heart data flow\Excel Source 1.Outputs[Excel Source Output].Columns[ExerciseAngina]"
+                      name="ExerciseAngina"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Heart data flow\Excel Source 1.Outputs[Excel Source Output].Columns[ST_Slope]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Heart data flow\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[ST_Slope]"
+                      lineageId="Package\Heart data flow\Excel Source 1.Outputs[Excel Source Output].Columns[ST_Slope]"
+                      name="ST_Slope"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Heart data flow\Excel Source 1.Outputs[Excel Source Output].Columns[number of major vessels]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Heart data flow\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[number of major vessels]"
+                      lineageId="Package\Heart data flow\Excel Source 1.Outputs[Excel Source Output].Columns[number of major vessels]"
+                      name="number of major vessels"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Heart data flow\Excel Source 1.Outputs[Excel Source Output].Columns[Thal rate]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Heart data flow\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[Thal rate]"
+                      lineageId="Package\Heart data flow\Excel Source 1.Outputs[Excel Source Output].Columns[Thal rate]"
+                      name="Thal rate"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Heart data flow\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[age]"
+                      dataType="r8"
+                      name="age" />
+                    <externalMetadataColumn
+                      refId="Package\Heart data flow\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[sex]"
+                      dataType="r8"
+                      name="sex" />
+                    <externalMetadataColumn
+                      refId="Package\Heart data flow\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[oldpeak]"
+                      dataType="r8"
+                      name="oldpeak" />
+                    <externalMetadataColumn
+                      refId="Package\Heart data flow\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[condition]"
+                      dataType="r8"
+                      name="condition" />
+                    <externalMetadataColumn
+                      refId="Package\Heart data flow\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[ChestPainType]"
+                      dataType="r8"
+                      name="ChestPainType" />
+                    <externalMetadataColumn
+                      refId="Package\Heart data flow\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[RestingBP]"
+                      dataType="r8"
+                      name="RestingBP" />
+                    <externalMetadataColumn
+                      refId="Package\Heart data flow\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[Cholesterol]"
+                      dataType="r8"
+                      name="Cholesterol" />
+                    <externalMetadataColumn
+                      refId="Package\Heart data flow\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[FastingBS]"
+                      dataType="r8"
+                      name="FastingBS" />
+                    <externalMetadataColumn
+                      refId="Package\Heart data flow\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[RestingECG]"
+                      dataType="r8"
+                      name="RestingECG" />
+                    <externalMetadataColumn
+                      refId="Package\Heart data flow\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[MaxHR]"
+                      dataType="r8"
+                      name="MaxHR" />
+                    <externalMetadataColumn
+                      refId="Package\Heart data flow\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[ExerciseAngina]"
+                      dataType="r8"
+                      name="ExerciseAngina" />
+                    <externalMetadataColumn
+                      refId="Package\Heart data flow\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[ST_Slope]"
+                      dataType="r8"
+                      name="ST_Slope" />
+                    <externalMetadataColumn
+                      refId="Package\Heart data flow\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[number of major vessels]"
+                      dataType="r8"
+                      name="number of major vessels" />
+                    <externalMetadataColumn
+                      refId="Package\Heart data flow\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[Thal rate]"
+                      dataType="r8"
+                      name="Thal rate" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Heart data flow\Excel Source 1.Outputs[Excel Source Error Output]"
+                  isErrorOut="true"
+                  name="Excel Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Heart data flow\Excel Source 1.Outputs[Excel Source Error Output].Columns[age]"
+                      dataType="r8"
+                      lineageId="Package\Heart data flow\Excel Source 1.Outputs[Excel Source Error Output].Columns[age]"
+                      name="age" />
+                    <outputColumn
+                      refId="Package\Heart data flow\Excel Source 1.Outputs[Excel Source Error Output].Columns[sex]"
+                      dataType="r8"
+                      lineageId="Package\Heart data flow\Excel Source 1.Outputs[Excel Source Error Output].Columns[sex]"
+                      name="sex" />
+                    <outputColumn
+                      refId="Package\Heart data flow\Excel Source 1.Outputs[Excel Source Error Output].Columns[ChestPainType]"
+                      dataType="r8"
+                      lineageId="Package\Heart data flow\Excel Source 1.Outputs[Excel Source Error Output].Columns[ChestPainType]"
+                      name="ChestPainType" />
+                    <outputColumn
+                      refId="Package\Heart data flow\Excel Source 1.Outputs[Excel Source Error Output].Columns[RestingBP]"
+                      dataType="r8"
+                      lineageId="Package\Heart data flow\Excel Source 1.Outputs[Excel Source Error Output].Columns[RestingBP]"
+                      name="RestingBP" />
+                    <outputColumn
+                      refId="Package\Heart data flow\Excel Source 1.Outputs[Excel Source Error Output].Columns[Cholesterol]"
+                      dataType="r8"
+                      lineageId="Package\Heart data flow\Excel Source 1.Outputs[Excel Source Error Output].Columns[Cholesterol]"
+                      name="Cholesterol" />
+                    <outputColumn
+                      refId="Package\Heart data flow\Excel Source 1.Outputs[Excel Source Error Output].Columns[FastingBS]"
+                      dataType="r8"
+                      lineageId="Package\Heart data flow\Excel Source 1.Outputs[Excel Source Error Output].Columns[FastingBS]"
+                      name="FastingBS" />
+                    <outputColumn
+                      refId="Package\Heart data flow\Excel Source 1.Outputs[Excel Source Error Output].Columns[RestingECG]"
+                      dataType="r8"
+                      lineageId="Package\Heart data flow\Excel Source 1.Outputs[Excel Source Error Output].Columns[RestingECG]"
+                      name="RestingECG" />
+                    <outputColumn
+                      refId="Package\Heart data flow\Excel Source 1.Outputs[Excel Source Error Output].Columns[MaxHR]"
+                      dataType="r8"
+                      lineageId="Package\Heart data flow\Excel Source 1.Outputs[Excel Source Error Output].Columns[MaxHR]"
+                      name="MaxHR" />
+                    <outputColumn
+                      refId="Package\Heart data flow\Excel Source 1.Outputs[Excel Source Error Output].Columns[ExerciseAngina]"
+                      dataType="r8"
+                      lineageId="Package\Heart data flow\Excel Source 1.Outputs[Excel Source Error Output].Columns[ExerciseAngina]"
+                      name="ExerciseAngina" />
+                    <outputColumn
+                      refId="Package\Heart data flow\Excel Source 1.Outputs[Excel Source Error Output].Columns[oldpeak]"
+                      dataType="r8"
+                      lineageId="Package\Heart data flow\Excel Source 1.Outputs[Excel Source Error Output].Columns[oldpeak]"
+                      name="oldpeak" />
+                    <outputColumn
+                      refId="Package\Heart data flow\Excel Source 1.Outputs[Excel Source Error Output].Columns[ST_Slope]"
+                      dataType="r8"
+                      lineageId="Package\Heart data flow\Excel Source 1.Outputs[Excel Source Error Output].Columns[ST_Slope]"
+                      name="ST_Slope" />
+                    <outputColumn
+                      refId="Package\Heart data flow\Excel Source 1.Outputs[Excel Source Error Output].Columns[number of major vessels]"
+                      dataType="r8"
+                      lineageId="Package\Heart data flow\Excel Source 1.Outputs[Excel Source Error Output].Columns[number of major vessels]"
+                      name="number of major vessels" />
+                    <outputColumn
+                      refId="Package\Heart data flow\Excel Source 1.Outputs[Excel Source Error Output].Columns[Thal rate]"
+                      dataType="r8"
+                      lineageId="Package\Heart data flow\Excel Source 1.Outputs[Excel Source Error Output].Columns[Thal rate]"
+                      name="Thal rate" />
+                    <outputColumn
+                      refId="Package\Heart data flow\Excel Source 1.Outputs[Excel Source Error Output].Columns[condition]"
+                      dataType="r8"
+                      lineageId="Package\Heart data flow\Excel Source 1.Outputs[Excel Source Error Output].Columns[condition]"
+                      name="condition" />
+                    <outputColumn
+                      refId="Package\Heart data flow\Excel Source 1.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Heart data flow\Excel Source 1.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Heart data flow\Excel Source 1.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Heart data flow\Excel Source 1.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Heart data flow\Excel Source 2"
+              componentClassID="Microsoft.ExcelSource"
+              contactInfo="Excel Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Excel Source"
+              name="Excel Source 2"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">heart$</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mapping from parameters in the SQL command to variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Heart data flow\Excel Source 2.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Excel Conc Heart3]"
+                  connectionManagerRefId="Package.ConnectionManagers[Excel Conc Heart3]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Heart data flow\Excel Source 2.Outputs[Excel Source Output]"
+                  name="Excel Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Heart data flow\Excel Source 2.Outputs[Excel Source Output].Columns[ChestPainType]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Heart data flow\Excel Source 2.Outputs[Excel Source Output].ExternalColumns[ChestPainType]"
+                      length="255"
+                      lineageId="Package\Heart data flow\Excel Source 2.Outputs[Excel Source Output].Columns[ChestPainType]"
+                      name="ChestPainType"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Heart data flow\Excel Source 2.Outputs[Excel Source Output].Columns[RestingBP]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Heart data flow\Excel Source 2.Outputs[Excel Source Output].ExternalColumns[RestingBP]"
+                      lineageId="Package\Heart data flow\Excel Source 2.Outputs[Excel Source Output].Columns[RestingBP]"
+                      name="RestingBP"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Heart data flow\Excel Source 2.Outputs[Excel Source Output].Columns[Cholesterol]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Heart data flow\Excel Source 2.Outputs[Excel Source Output].ExternalColumns[Cholesterol]"
+                      lineageId="Package\Heart data flow\Excel Source 2.Outputs[Excel Source Output].Columns[Cholesterol]"
+                      name="Cholesterol"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Heart data flow\Excel Source 2.Outputs[Excel Source Output].Columns[FastingBS]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Heart data flow\Excel Source 2.Outputs[Excel Source Output].ExternalColumns[FastingBS]"
+                      lineageId="Package\Heart data flow\Excel Source 2.Outputs[Excel Source Output].Columns[FastingBS]"
+                      name="FastingBS"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Heart data flow\Excel Source 2.Outputs[Excel Source Output].Columns[RestingECG]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Heart data flow\Excel Source 2.Outputs[Excel Source Output].ExternalColumns[RestingECG]"
+                      length="255"
+                      lineageId="Package\Heart data flow\Excel Source 2.Outputs[Excel Source Output].Columns[RestingECG]"
+                      name="RestingECG"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Heart data flow\Excel Source 2.Outputs[Excel Source Output].Columns[MaxHR]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Heart data flow\Excel Source 2.Outputs[Excel Source Output].ExternalColumns[MaxHR]"
+                      lineageId="Package\Heart data flow\Excel Source 2.Outputs[Excel Source Output].Columns[MaxHR]"
+                      name="MaxHR"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Heart data flow\Excel Source 2.Outputs[Excel Source Output].Columns[ExerciseAngina]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Heart data flow\Excel Source 2.Outputs[Excel Source Output].ExternalColumns[ExerciseAngina]"
+                      length="255"
+                      lineageId="Package\Heart data flow\Excel Source 2.Outputs[Excel Source Output].Columns[ExerciseAngina]"
+                      name="ExerciseAngina"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Heart data flow\Excel Source 2.Outputs[Excel Source Output].Columns[ST_Slope]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Heart data flow\Excel Source 2.Outputs[Excel Source Output].ExternalColumns[ST_Slope]"
+                      length="255"
+                      lineageId="Package\Heart data flow\Excel Source 2.Outputs[Excel Source Output].Columns[ST_Slope]"
+                      name="ST_Slope"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Heart data flow\Excel Source 2.Outputs[Excel Source Output].Columns[age]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Heart data flow\Excel Source 2.Outputs[Excel Source Output].ExternalColumns[age]"
+                      lineageId="Package\Heart data flow\Excel Source 2.Outputs[Excel Source Output].Columns[age]"
+                      name="age"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Heart data flow\Excel Source 2.Outputs[Excel Source Output].Columns[sex]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Heart data flow\Excel Source 2.Outputs[Excel Source Output].ExternalColumns[sex]"
+                      lineageId="Package\Heart data flow\Excel Source 2.Outputs[Excel Source Output].Columns[sex]"
+                      name="sex"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Heart data flow\Excel Source 2.Outputs[Excel Source Output].Columns[oldpeak]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Heart data flow\Excel Source 2.Outputs[Excel Source Output].ExternalColumns[oldpeak]"
+                      lineageId="Package\Heart data flow\Excel Source 2.Outputs[Excel Source Output].Columns[oldpeak]"
+                      name="oldpeak"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Heart data flow\Excel Source 2.Outputs[Excel Source Output].Columns[number of major vessels]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Heart data flow\Excel Source 2.Outputs[Excel Source Output].ExternalColumns[number of major vessels]"
+                      lineageId="Package\Heart data flow\Excel Source 2.Outputs[Excel Source Output].Columns[number of major vessels]"
+                      name="number of major vessels"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Heart data flow\Excel Source 2.Outputs[Excel Source Output].Columns[Thal rate]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Heart data flow\Excel Source 2.Outputs[Excel Source Output].ExternalColumns[Thal rate]"
+                      lineageId="Package\Heart data flow\Excel Source 2.Outputs[Excel Source Output].Columns[Thal rate]"
+                      name="Thal rate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Heart data flow\Excel Source 2.Outputs[Excel Source Output].Columns[condition]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Heart data flow\Excel Source 2.Outputs[Excel Source Output].ExternalColumns[condition]"
+                      lineageId="Package\Heart data flow\Excel Source 2.Outputs[Excel Source Output].Columns[condition]"
+                      name="condition"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Heart data flow\Excel Source 2.Outputs[Excel Source Output].ExternalColumns[ChestPainType]"
+                      dataType="r8"
+                      name="ChestPainType" />
+                    <externalMetadataColumn
+                      refId="Package\Heart data flow\Excel Source 2.Outputs[Excel Source Output].ExternalColumns[RestingBP]"
+                      dataType="r8"
+                      name="RestingBP" />
+                    <externalMetadataColumn
+                      refId="Package\Heart data flow\Excel Source 2.Outputs[Excel Source Output].ExternalColumns[Cholesterol]"
+                      dataType="r8"
+                      name="Cholesterol" />
+                    <externalMetadataColumn
+                      refId="Package\Heart data flow\Excel Source 2.Outputs[Excel Source Output].ExternalColumns[FastingBS]"
+                      dataType="r8"
+                      name="FastingBS" />
+                    <externalMetadataColumn
+                      refId="Package\Heart data flow\Excel Source 2.Outputs[Excel Source Output].ExternalColumns[RestingECG]"
+                      dataType="r8"
+                      name="RestingECG" />
+                    <externalMetadataColumn
+                      refId="Package\Heart data flow\Excel Source 2.Outputs[Excel Source Output].ExternalColumns[MaxHR]"
+                      dataType="r8"
+                      name="MaxHR" />
+                    <externalMetadataColumn
+                      refId="Package\Heart data flow\Excel Source 2.Outputs[Excel Source Output].ExternalColumns[ExerciseAngina]"
+                      dataType="r8"
+                      name="ExerciseAngina" />
+                    <externalMetadataColumn
+                      refId="Package\Heart data flow\Excel Source 2.Outputs[Excel Source Output].ExternalColumns[ST_Slope]"
+                      dataType="r8"
+                      name="ST_Slope" />
+                    <externalMetadataColumn
+                      refId="Package\Heart data flow\Excel Source 2.Outputs[Excel Source Output].ExternalColumns[age]"
+                      dataType="r8"
+                      name="age" />
+                    <externalMetadataColumn
+                      refId="Package\Heart data flow\Excel Source 2.Outputs[Excel Source Output].ExternalColumns[sex]"
+                      dataType="r8"
+                      name="sex" />
+                    <externalMetadataColumn
+                      refId="Package\Heart data flow\Excel Source 2.Outputs[Excel Source Output].ExternalColumns[oldpeak]"
+                      dataType="r8"
+                      name="oldpeak" />
+                    <externalMetadataColumn
+                      refId="Package\Heart data flow\Excel Source 2.Outputs[Excel Source Output].ExternalColumns[number of major vessels]"
+                      dataType="r8"
+                      name="number of major vessels" />
+                    <externalMetadataColumn
+                      refId="Package\Heart data flow\Excel Source 2.Outputs[Excel Source Output].ExternalColumns[Thal rate]"
+                      dataType="r8"
+                      name="Thal rate" />
+                    <externalMetadataColumn
+                      refId="Package\Heart data flow\Excel Source 2.Outputs[Excel Source Output].ExternalColumns[condition]"
+                      dataType="r8"
+                      name="condition" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Heart data flow\Excel Source 2.Outputs[Excel Source Error Output]"
+                  isErrorOut="true"
+                  name="Excel Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Heart data flow\Excel Source 2.Outputs[Excel Source Error Output].Columns[age]"
+                      dataType="r8"
+                      lineageId="Package\Heart data flow\Excel Source 2.Outputs[Excel Source Error Output].Columns[age]"
+                      name="age" />
+                    <outputColumn
+                      refId="Package\Heart data flow\Excel Source 2.Outputs[Excel Source Error Output].Columns[sex]"
+                      dataType="r8"
+                      lineageId="Package\Heart data flow\Excel Source 2.Outputs[Excel Source Error Output].Columns[sex]"
+                      name="sex" />
+                    <outputColumn
+                      refId="Package\Heart data flow\Excel Source 2.Outputs[Excel Source Error Output].Columns[ChestPainType]"
+                      dataType="r8"
+                      lineageId="Package\Heart data flow\Excel Source 2.Outputs[Excel Source Error Output].Columns[ChestPainType]"
+                      name="ChestPainType" />
+                    <outputColumn
+                      refId="Package\Heart data flow\Excel Source 2.Outputs[Excel Source Error Output].Columns[RestingBP]"
+                      dataType="r8"
+                      lineageId="Package\Heart data flow\Excel Source 2.Outputs[Excel Source Error Output].Columns[RestingBP]"
+                      name="RestingBP" />
+                    <outputColumn
+                      refId="Package\Heart data flow\Excel Source 2.Outputs[Excel Source Error Output].Columns[Cholesterol]"
+                      dataType="r8"
+                      lineageId="Package\Heart data flow\Excel Source 2.Outputs[Excel Source Error Output].Columns[Cholesterol]"
+                      name="Cholesterol" />
+                    <outputColumn
+                      refId="Package\Heart data flow\Excel Source 2.Outputs[Excel Source Error Output].Columns[FastingBS]"
+                      dataType="r8"
+                      lineageId="Package\Heart data flow\Excel Source 2.Outputs[Excel Source Error Output].Columns[FastingBS]"
+                      name="FastingBS" />
+                    <outputColumn
+                      refId="Package\Heart data flow\Excel Source 2.Outputs[Excel Source Error Output].Columns[RestingECG]"
+                      dataType="r8"
+                      lineageId="Package\Heart data flow\Excel Source 2.Outputs[Excel Source Error Output].Columns[RestingECG]"
+                      name="RestingECG" />
+                    <outputColumn
+                      refId="Package\Heart data flow\Excel Source 2.Outputs[Excel Source Error Output].Columns[MaxHR]"
+                      dataType="r8"
+                      lineageId="Package\Heart data flow\Excel Source 2.Outputs[Excel Source Error Output].Columns[MaxHR]"
+                      name="MaxHR" />
+                    <outputColumn
+                      refId="Package\Heart data flow\Excel Source 2.Outputs[Excel Source Error Output].Columns[ExerciseAngina]"
+                      dataType="r8"
+                      lineageId="Package\Heart data flow\Excel Source 2.Outputs[Excel Source Error Output].Columns[ExerciseAngina]"
+                      name="ExerciseAngina" />
+                    <outputColumn
+                      refId="Package\Heart data flow\Excel Source 2.Outputs[Excel Source Error Output].Columns[oldpeak]"
+                      dataType="r8"
+                      lineageId="Package\Heart data flow\Excel Source 2.Outputs[Excel Source Error Output].Columns[oldpeak]"
+                      name="oldpeak" />
+                    <outputColumn
+                      refId="Package\Heart data flow\Excel Source 2.Outputs[Excel Source Error Output].Columns[ST_Slope]"
+                      dataType="r8"
+                      lineageId="Package\Heart data flow\Excel Source 2.Outputs[Excel Source Error Output].Columns[ST_Slope]"
+                      name="ST_Slope" />
+                    <outputColumn
+                      refId="Package\Heart data flow\Excel Source 2.Outputs[Excel Source Error Output].Columns[number of major vessels]"
+                      dataType="r8"
+                      lineageId="Package\Heart data flow\Excel Source 2.Outputs[Excel Source Error Output].Columns[number of major vessels]"
+                      name="number of major vessels" />
+                    <outputColumn
+                      refId="Package\Heart data flow\Excel Source 2.Outputs[Excel Source Error Output].Columns[Thal rate]"
+                      dataType="r8"
+                      lineageId="Package\Heart data flow\Excel Source 2.Outputs[Excel Source Error Output].Columns[Thal rate]"
+                      name="Thal rate" />
+                    <outputColumn
+                      refId="Package\Heart data flow\Excel Source 2.Outputs[Excel Source Error Output].Columns[condition]"
+                      dataType="r8"
+                      lineageId="Package\Heart data flow\Excel Source 2.Outputs[Excel Source Error Output].Columns[condition]"
+                      name="condition" />
+                    <outputColumn
+                      refId="Package\Heart data flow\Excel Source 2.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Heart data flow\Excel Source 2.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Heart data flow\Excel Source 2.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Heart data flow\Excel Source 2.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Heart data flow\Union All"
+              componentClassID="Microsoft.UnionAll"
+              contactInfo="Union All;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Combines rows from multiple data flows without sorting. For example, add rows back to a data flow after correction of errors. If sorting is important, we recommend using the Merge transformation."
+              name="Union All"
+              version="1">
+              <inputs>
+                <input
+                  refId="Package\Heart data flow\Union All.Inputs[Union All Input 1]"
+                  name="Union All Input 1">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Heart data flow\Union All.Inputs[Union All Input 1].Columns[age]"
+                      cachedDataType="r8"
+                      cachedName="age"
+                      lineageId="Package\Heart data flow\Excel Source.Outputs[Excel Source Output].Columns[age]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Heart data flow\Union All.Outputs[Union All Output 1].Columns[age]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Heart data flow\Union All.Inputs[Union All Input 1].Columns[sex]"
+                      cachedDataType="r8"
+                      cachedName="sex"
+                      lineageId="Package\Heart data flow\Excel Source.Outputs[Excel Source Output].Columns[sex]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Heart data flow\Union All.Outputs[Union All Output 1].Columns[sex]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Heart data flow\Union All.Inputs[Union All Input 1].Columns[oldpeak]"
+                      cachedDataType="r8"
+                      cachedName="oldpeak"
+                      lineageId="Package\Heart data flow\Excel Source.Outputs[Excel Source Output].Columns[oldpeak]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Heart data flow\Union All.Outputs[Union All Output 1].Columns[oldpeak]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Heart data flow\Union All.Inputs[Union All Input 1].Columns[ChestPainType]"
+                      cachedDataType="r8"
+                      cachedName="ChestPainType"
+                      lineageId="Package\Heart data flow\Excel Source.Outputs[Excel Source Output].Columns[ChestPainType]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Heart data flow\Union All.Outputs[Union All Output 1].Columns[ChestPainType]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Heart data flow\Union All.Inputs[Union All Input 1].Columns[RestingBP]"
+                      cachedDataType="r8"
+                      cachedName="RestingBP"
+                      lineageId="Package\Heart data flow\Excel Source.Outputs[Excel Source Output].Columns[RestingBP]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Heart data flow\Union All.Outputs[Union All Output 1].Columns[RestingBP]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Heart data flow\Union All.Inputs[Union All Input 1].Columns[Cholesterol]"
+                      cachedDataType="r8"
+                      cachedName="Cholesterol"
+                      lineageId="Package\Heart data flow\Excel Source.Outputs[Excel Source Output].Columns[Cholesterol]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Heart data flow\Union All.Outputs[Union All Output 1].Columns[Cholesterol]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Heart data flow\Union All.Inputs[Union All Input 1].Columns[FastingBS]"
+                      cachedDataType="r8"
+                      cachedName="FastingBS"
+                      lineageId="Package\Heart data flow\Excel Source.Outputs[Excel Source Output].Columns[FastingBS]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Heart data flow\Union All.Outputs[Union All Output 1].Columns[FastingBS]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Heart data flow\Union All.Inputs[Union All Input 1].Columns[RestingECG]"
+                      cachedDataType="r8"
+                      cachedName="RestingECG"
+                      lineageId="Package\Heart data flow\Excel Source.Outputs[Excel Source Output].Columns[RestingECG]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Heart data flow\Union All.Outputs[Union All Output 1].Columns[RestingECG]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Heart data flow\Union All.Inputs[Union All Input 1].Columns[MaxHR]"
+                      cachedDataType="r8"
+                      cachedName="MaxHR"
+                      lineageId="Package\Heart data flow\Excel Source.Outputs[Excel Source Output].Columns[MaxHR]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Heart data flow\Union All.Outputs[Union All Output 1].Columns[MaxHR]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Heart data flow\Union All.Inputs[Union All Input 1].Columns[ExerciseAngina]"
+                      cachedDataType="r8"
+                      cachedName="ExerciseAngina"
+                      lineageId="Package\Heart data flow\Excel Source.Outputs[Excel Source Output].Columns[ExerciseAngina]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Heart data flow\Union All.Outputs[Union All Output 1].Columns[ExerciseAngina]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Heart data flow\Union All.Inputs[Union All Input 1].Columns[ST_Slope]"
+                      cachedDataType="r8"
+                      cachedName="ST_Slope"
+                      lineageId="Package\Heart data flow\Excel Source.Outputs[Excel Source Output].Columns[ST_Slope]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Heart data flow\Union All.Outputs[Union All Output 1].Columns[ST_Slope]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Heart data flow\Union All.Inputs[Union All Input 1].Columns[number of major vessels]"
+                      cachedDataType="r8"
+                      cachedName="number of major vessels"
+                      lineageId="Package\Heart data flow\Excel Source.Outputs[Excel Source Output].Columns[number of major vessels]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Heart data flow\Union All.Outputs[Union All Output 1].Columns[number of major vessels]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Heart data flow\Union All.Inputs[Union All Input 1].Columns[Thal rate]"
+                      cachedDataType="r8"
+                      cachedName="Thal rate"
+                      lineageId="Package\Heart data flow\Excel Source.Outputs[Excel Source Output].Columns[Thal rate]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Heart data flow\Union All.Outputs[Union All Output 1].Columns[Thal rate]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Heart data flow\Union All.Inputs[Union All Input 1].Columns[condition]"
+                      cachedDataType="r8"
+                      cachedName="condition"
+                      lineageId="Package\Heart data flow\Excel Source.Outputs[Excel Source Output].Columns[condition]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Heart data flow\Union All.Outputs[Union All Output 1].Columns[condition]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Heart data flow\Union All.Inputs[Union All Input 2]"
+                  hasSideEffects="true"
+                  name="Union All Input 2">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Heart data flow\Union All.Inputs[Union All Input 2].Columns[age]"
+                      cachedDataType="r8"
+                      cachedName="age"
+                      lineageId="Package\Heart data flow\Excel Source 1.Outputs[Excel Source Output].Columns[age]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Heart data flow\Union All.Outputs[Union All Output 1].Columns[age]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Heart data flow\Union All.Inputs[Union All Input 2].Columns[sex]"
+                      cachedDataType="r8"
+                      cachedName="sex"
+                      lineageId="Package\Heart data flow\Excel Source 1.Outputs[Excel Source Output].Columns[sex]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Heart data flow\Union All.Outputs[Union All Output 1].Columns[sex]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Heart data flow\Union All.Inputs[Union All Input 2].Columns[oldpeak]"
+                      cachedDataType="r8"
+                      cachedName="oldpeak"
+                      lineageId="Package\Heart data flow\Excel Source 1.Outputs[Excel Source Output].Columns[oldpeak]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Heart data flow\Union All.Outputs[Union All Output 1].Columns[oldpeak]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Heart data flow\Union All.Inputs[Union All Input 2].Columns[condition]"
+                      cachedDataType="r8"
+                      cachedName="condition"
+                      lineageId="Package\Heart data flow\Excel Source 1.Outputs[Excel Source Output].Columns[condition]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Heart data flow\Union All.Outputs[Union All Output 1].Columns[condition]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Heart data flow\Union All.Inputs[Union All Input 2].Columns[ChestPainType]"
+                      cachedDataType="r8"
+                      cachedName="ChestPainType"
+                      lineageId="Package\Heart data flow\Excel Source 1.Outputs[Excel Source Output].Columns[ChestPainType]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Heart data flow\Union All.Outputs[Union All Output 1].Columns[ChestPainType]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Heart data flow\Union All.Inputs[Union All Input 2].Columns[RestingBP]"
+                      cachedDataType="r8"
+                      cachedName="RestingBP"
+                      lineageId="Package\Heart data flow\Excel Source 1.Outputs[Excel Source Output].Columns[RestingBP]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Heart data flow\Union All.Outputs[Union All Output 1].Columns[RestingBP]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Heart data flow\Union All.Inputs[Union All Input 2].Columns[Cholesterol]"
+                      cachedDataType="r8"
+                      cachedName="Cholesterol"
+                      lineageId="Package\Heart data flow\Excel Source 1.Outputs[Excel Source Output].Columns[Cholesterol]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Heart data flow\Union All.Outputs[Union All Output 1].Columns[Cholesterol]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Heart data flow\Union All.Inputs[Union All Input 2].Columns[FastingBS]"
+                      cachedDataType="r8"
+                      cachedName="FastingBS"
+                      lineageId="Package\Heart data flow\Excel Source 1.Outputs[Excel Source Output].Columns[FastingBS]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Heart data flow\Union All.Outputs[Union All Output 1].Columns[FastingBS]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Heart data flow\Union All.Inputs[Union All Input 2].Columns[RestingECG]"
+                      cachedDataType="r8"
+                      cachedName="RestingECG"
+                      lineageId="Package\Heart data flow\Excel Source 1.Outputs[Excel Source Output].Columns[RestingECG]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Heart data flow\Union All.Outputs[Union All Output 1].Columns[RestingECG]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Heart data flow\Union All.Inputs[Union All Input 2].Columns[MaxHR]"
+                      cachedDataType="r8"
+                      cachedName="MaxHR"
+                      lineageId="Package\Heart data flow\Excel Source 1.Outputs[Excel Source Output].Columns[MaxHR]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Heart data flow\Union All.Outputs[Union All Output 1].Columns[MaxHR]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Heart data flow\Union All.Inputs[Union All Input 2].Columns[ExerciseAngina]"
+                      cachedDataType="r8"
+                      cachedName="ExerciseAngina"
+                      lineageId="Package\Heart data flow\Excel Source 1.Outputs[Excel Source Output].Columns[ExerciseAngina]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Heart data flow\Union All.Outputs[Union All Output 1].Columns[ExerciseAngina]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Heart data flow\Union All.Inputs[Union All Input 2].Columns[ST_Slope]"
+                      cachedDataType="r8"
+                      cachedName="ST_Slope"
+                      lineageId="Package\Heart data flow\Excel Source 1.Outputs[Excel Source Output].Columns[ST_Slope]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Heart data flow\Union All.Outputs[Union All Output 1].Columns[ST_Slope]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Heart data flow\Union All.Inputs[Union All Input 2].Columns[number of major vessels]"
+                      cachedDataType="r8"
+                      cachedName="number of major vessels"
+                      lineageId="Package\Heart data flow\Excel Source 1.Outputs[Excel Source Output].Columns[number of major vessels]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Heart data flow\Union All.Outputs[Union All Output 1].Columns[number of major vessels]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Heart data flow\Union All.Inputs[Union All Input 2].Columns[Thal rate]"
+                      cachedDataType="r8"
+                      cachedName="Thal rate"
+                      lineageId="Package\Heart data flow\Excel Source 1.Outputs[Excel Source Output].Columns[Thal rate]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Heart data flow\Union All.Outputs[Union All Output 1].Columns[Thal rate]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Heart data flow\Union All.Inputs[Union All Input 4]"
+                  hasSideEffects="true"
+                  name="Union All Input 4">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Heart data flow\Union All.Inputs[Union All Input 4].Columns[RestingBP]"
+                      cachedDataType="r8"
+                      cachedName="RestingBP"
+                      lineageId="Package\Heart data flow\Excel Source 2.Outputs[Excel Source Output].Columns[RestingBP]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Heart data flow\Union All.Outputs[Union All Output 1].Columns[RestingBP]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Heart data flow\Union All.Inputs[Union All Input 4].Columns[Cholesterol]"
+                      cachedDataType="r8"
+                      cachedName="Cholesterol"
+                      lineageId="Package\Heart data flow\Excel Source 2.Outputs[Excel Source Output].Columns[Cholesterol]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Heart data flow\Union All.Outputs[Union All Output 1].Columns[Cholesterol]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Heart data flow\Union All.Inputs[Union All Input 4].Columns[FastingBS]"
+                      cachedDataType="r8"
+                      cachedName="FastingBS"
+                      lineageId="Package\Heart data flow\Excel Source 2.Outputs[Excel Source Output].Columns[FastingBS]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Heart data flow\Union All.Outputs[Union All Output 1].Columns[FastingBS]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Heart data flow\Union All.Inputs[Union All Input 4].Columns[MaxHR]"
+                      cachedDataType="r8"
+                      cachedName="MaxHR"
+                      lineageId="Package\Heart data flow\Excel Source 2.Outputs[Excel Source Output].Columns[MaxHR]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Heart data flow\Union All.Outputs[Union All Output 1].Columns[MaxHR]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Heart data flow\Union All.Inputs[Union All Input 4].Columns[age]"
+                      cachedDataType="r8"
+                      cachedName="age"
+                      lineageId="Package\Heart data flow\Excel Source 2.Outputs[Excel Source Output].Columns[age]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Heart data flow\Union All.Outputs[Union All Output 1].Columns[age]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Heart data flow\Union All.Inputs[Union All Input 4].Columns[sex]"
+                      cachedDataType="r8"
+                      cachedName="sex"
+                      lineageId="Package\Heart data flow\Excel Source 2.Outputs[Excel Source Output].Columns[sex]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Heart data flow\Union All.Outputs[Union All Output 1].Columns[sex]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Heart data flow\Union All.Inputs[Union All Input 4].Columns[oldpeak]"
+                      cachedDataType="r8"
+                      cachedName="oldpeak"
+                      lineageId="Package\Heart data flow\Excel Source 2.Outputs[Excel Source Output].Columns[oldpeak]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Heart data flow\Union All.Outputs[Union All Output 1].Columns[oldpeak]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Heart data flow\Union All.Inputs[Union All Input 4].Columns[number of major vessels]"
+                      cachedDataType="r8"
+                      cachedName="number of major vessels"
+                      lineageId="Package\Heart data flow\Excel Source 2.Outputs[Excel Source Output].Columns[number of major vessels]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Heart data flow\Union All.Outputs[Union All Output 1].Columns[number of major vessels]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Heart data flow\Union All.Inputs[Union All Input 4].Columns[Thal rate]"
+                      cachedDataType="r8"
+                      cachedName="Thal rate"
+                      lineageId="Package\Heart data flow\Excel Source 2.Outputs[Excel Source Output].Columns[Thal rate]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Heart data flow\Union All.Outputs[Union All Output 1].Columns[Thal rate]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Heart data flow\Union All.Inputs[Union All Input 4].Columns[condition]"
+                      cachedDataType="r8"
+                      cachedName="condition"
+                      lineageId="Package\Heart data flow\Excel Source 2.Outputs[Excel Source Output].Columns[condition]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Heart data flow\Union All.Outputs[Union All Output 1].Columns[condition]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Heart data flow\Union All.Inputs[Union All Input 3]"
+                  dangling="true"
+                  hasSideEffects="true"
+                  name="Union All Input 3">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Heart data flow\Union All.Outputs[Union All Output 1]"
+                  name="Union All Output 1">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Heart data flow\Union All.Outputs[Union All Output 1].Columns[age]"
+                      dataType="r8"
+                      lineageId="Package\Heart data flow\Union All.Outputs[Union All Output 1].Columns[age]"
+                      name="age" />
+                    <outputColumn
+                      refId="Package\Heart data flow\Union All.Outputs[Union All Output 1].Columns[sex]"
+                      dataType="r8"
+                      lineageId="Package\Heart data flow\Union All.Outputs[Union All Output 1].Columns[sex]"
+                      name="sex" />
+                    <outputColumn
+                      refId="Package\Heart data flow\Union All.Outputs[Union All Output 1].Columns[oldpeak]"
+                      dataType="r8"
+                      lineageId="Package\Heart data flow\Union All.Outputs[Union All Output 1].Columns[oldpeak]"
+                      name="oldpeak" />
+                    <outputColumn
+                      refId="Package\Heart data flow\Union All.Outputs[Union All Output 1].Columns[ChestPainType]"
+                      dataType="r8"
+                      lineageId="Package\Heart data flow\Union All.Outputs[Union All Output 1].Columns[ChestPainType]"
+                      name="ChestPainType" />
+                    <outputColumn
+                      refId="Package\Heart data flow\Union All.Outputs[Union All Output 1].Columns[RestingBP]"
+                      dataType="r8"
+                      lineageId="Package\Heart data flow\Union All.Outputs[Union All Output 1].Columns[RestingBP]"
+                      name="RestingBP" />
+                    <outputColumn
+                      refId="Package\Heart data flow\Union All.Outputs[Union All Output 1].Columns[Cholesterol]"
+                      dataType="r8"
+                      lineageId="Package\Heart data flow\Union All.Outputs[Union All Output 1].Columns[Cholesterol]"
+                      name="Cholesterol" />
+                    <outputColumn
+                      refId="Package\Heart data flow\Union All.Outputs[Union All Output 1].Columns[FastingBS]"
+                      dataType="r8"
+                      lineageId="Package\Heart data flow\Union All.Outputs[Union All Output 1].Columns[FastingBS]"
+                      name="FastingBS" />
+                    <outputColumn
+                      refId="Package\Heart data flow\Union All.Outputs[Union All Output 1].Columns[RestingECG]"
+                      dataType="r8"
+                      lineageId="Package\Heart data flow\Union All.Outputs[Union All Output 1].Columns[RestingECG]"
+                      name="RestingECG" />
+                    <outputColumn
+                      refId="Package\Heart data flow\Union All.Outputs[Union All Output 1].Columns[MaxHR]"
+                      dataType="r8"
+                      lineageId="Package\Heart data flow\Union All.Outputs[Union All Output 1].Columns[MaxHR]"
+                      name="MaxHR" />
+                    <outputColumn
+                      refId="Package\Heart data flow\Union All.Outputs[Union All Output 1].Columns[ExerciseAngina]"
+                      dataType="r8"
+                      lineageId="Package\Heart data flow\Union All.Outputs[Union All Output 1].Columns[ExerciseAngina]"
+                      name="ExerciseAngina" />
+                    <outputColumn
+                      refId="Package\Heart data flow\Union All.Outputs[Union All Output 1].Columns[ST_Slope]"
+                      dataType="r8"
+                      lineageId="Package\Heart data flow\Union All.Outputs[Union All Output 1].Columns[ST_Slope]"
+                      name="ST_Slope" />
+                    <outputColumn
+                      refId="Package\Heart data flow\Union All.Outputs[Union All Output 1].Columns[number of major vessels]"
+                      dataType="r8"
+                      lineageId="Package\Heart data flow\Union All.Outputs[Union All Output 1].Columns[number of major vessels]"
+                      name="number of major vessels" />
+                    <outputColumn
+                      refId="Package\Heart data flow\Union All.Outputs[Union All Output 1].Columns[Thal rate]"
+                      dataType="r8"
+                      lineageId="Package\Heart data flow\Union All.Outputs[Union All Output 1].Columns[Thal rate]"
+                      name="Thal rate" />
+                    <outputColumn
+                      refId="Package\Heart data flow\Union All.Outputs[Union All Output 1].Columns[condition]"
+                      dataType="r8"
+                      lineageId="Package\Heart data flow\Union All.Outputs[Union All Output 1].Columns[condition]"
+                      name="condition" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Heart data flow.Paths[Excel Source Output]"
+              endId="Package\Heart data flow\Union All.Inputs[Union All Input 1]"
+              name="Excel Source Output"
+              startId="Package\Heart data flow\Excel Source.Outputs[Excel Source Output]" />
+            <path
+              refId="Package\Heart data flow.Paths[Excel Source Output1]"
+              endId="Package\Heart data flow\Union All.Inputs[Union All Input 2]"
+              name="Excel Source Output"
+              startId="Package\Heart data flow\Excel Source 1.Outputs[Excel Source Output]" />
+            <path
+              refId="Package\Heart data flow.Paths[Excel Source Output2]"
+              endId="Package\Heart data flow\Union All.Inputs[Union All Input 4]"
+              name="Excel Source Output"
+              startId="Package\Heart data flow\Excel Source 2.Outputs[Excel Source Output]" />
+            <path
+              refId="Package\Heart data flow.Paths[Union All Output 1]"
+              endId="Package\Heart data flow\Excel Destination.Inputs[Excel Destination Input]"
+              name="Union All Output 1"
+              startId="Package\Heart data flow\Union All.Outputs[Union All Output 1]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="148,41.6"
+          Id="Package\Heart data flow"
+          TopLeft="462.499974730115,169.866665485435" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Heart data flow">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="120,41.6"
+          Id="Package\Heart data flow\Union All"
+          TopLeft="493.33330637879,188.933332019514" />
+        <NodeLayout
+          Size="184.8,41.6"
+          Id="Package\Heart data flow\Excel Source 2"
+          TopLeft="684.16662928545,73.0000009220838" />
+        <NodeLayout
+          Size="163.2,44"
+          Id="Package\Heart data flow\Excel Source 1"
+          TopLeft="478.333307198353,74.7333335201607" />
+        <NodeLayout
+          Size="159.2,41.6"
+          Id="Package\Heart data flow\Excel Destination"
+          TopLeft="475.833307334947,267.799998137752" />
+        <NodeLayout
+          Size="140,41.6"
+          Id="Package\Heart data flow\Excel Source"
+          TopLeft="309.166649774545,71.066666172478" />
+        <EdgeLayout
+          Id="Package\Heart data flow.Paths[Excel Source Output1]"
+          TopLeft="556.633306788571,118.733333520161">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,70.1999984993538"
+              Start="0,0"
+              End="0,62.6999984993538">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,62.6999984993538" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Heart data flow.Paths[Excel Source Output]"
+          TopLeft="379.166649774545,112.666666172478">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="146.166656604244,76.2666658470365"
+              Start="0,0"
+              End="146.166656604244,68.7666658470365">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,45.7391299002412" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,45.7391299002412"
+                    Point2="0,49.7391299002412"
+                    Point3="4,49.7391299002412" />
+                  <mssgle:LineSegment
+                    End="142.166656604244,49.7391299002412" />
+                  <mssgle:CubicBezierSegment
+                    Point1="142.166656604244,49.7391299002412"
+                    Point2="146.166656604244,49.7391299002412"
+                    Point3="146.166656604244,53.7391299002412" />
+                  <mssgle:LineSegment
+                    End="146.166656604244,68.7666658470365" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Heart data flow.Paths[Union All Output 1]"
+          TopLeft="554.383306856868,230.533332019514">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,37.2666661182377"
+              Start="0,0"
+              End="0,29.7666661182377">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,29.7666661182377" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Heart data flow.Paths[Excel Source Output2]"
+          TopLeft="776.56662928545,114.600000922084">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-195.23332290666,74.3333310974307"
+              Start="0,0"
+              End="-195.23332290666,66.8333310974307">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,44.4782594113678" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,44.4782594113678"
+                    Point2="0,48.4782594113678"
+                    Point3="-4,48.4782594113678" />
+                  <mssgle:LineSegment
+                    End="-191.23332290666,48.4782594113678" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-191.23332290666,48.4782594113678"
+                    Point2="-195.23332290666,48.4782594113678"
+                    Point3="-195.23332290666,52.4782594113678" />
+                  <mssgle:LineSegment
+                    End="-195.23332290666,66.8333310974307" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Heart data flow\Excel Source 1">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Heart data flow\Excel Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Heart data flow\Excel Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Heart data flow\Excel Source 2">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

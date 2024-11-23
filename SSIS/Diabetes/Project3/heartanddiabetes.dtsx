@@ -1,0 +1,1345 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="9/27/2024 3:26:04 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="LAPTOP-LVUEN91N"
+  DTS:CreatorName="LAPTOP-LVUEN91N\user"
+  DTS:DTSID="{E9D771DE-C6F8-4E07-8937-5F01A63406F1}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5556.0"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="heartanddiabetes"
+  DTS:PackageType="5"
+  DTS:VersionBuild="11"
+  DTS:VersionGUID="{FC3ACFB1-9568-467C-AF0E-7994E6C93E1D}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[alldiabetes]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{B08A7AE0-EF04-4999-9D04-CA11DC4D68AB}"
+      DTS:ObjectName="alldiabetes">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="0"
+          DTS:ConnectRetryInterval="0"
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.16.0;Data Source=D:\Final Project\diabeties\all_diabetes.xls;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[d1]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{B6D40C6B-259D-45AF-BF2B-AD0F0D72F81A}"
+      DTS:ObjectName="d1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="0"
+          DTS:ConnectRetryInterval="0"
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.16.0;Data Source=D:\Final Project\diabeties\diabetes.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[d2]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{A5D568DB-3A15-4842-972E-67C66AE367BA}"
+      DTS:ObjectName="d2">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="0"
+          DTS:ConnectRetryInterval="0"
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.16.0;Data Source=D:\Final Project\diabeties\diabetes_prediction_dataset.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Excel Connection Manager]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{70378D6E-982D-444B-B752-527BF0B1F5F6}"
+      DTS:ObjectName="Excel Connection Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="0"
+          DTS:ConnectRetryInterval="0"
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.16.0;Data Source=D:\Final Project\hheart\Heart.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Excel Connection Manager 1]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{B4C8E28C-B2D8-4626-B035-99B41741E23A}"
+      DTS:ObjectName="Excel Connection Manager 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="0"
+          DTS:ConnectRetryInterval="0"
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.16.0;Data Source=D:\Final Project\hheart\Heart 2.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Excel Connection Manager 2]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{90F467C6-2254-45EB-862B-9793AF167FA6}"
+      DTS:ObjectName="Excel Connection Manager 2">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="0"
+          DTS:ConnectRetryInterval="0"
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.16.0;Data Source=D:\Final Project\hheart\Heart 3.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Excel Connection Manager 3]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{C7006776-732E-4522-92DF-DE9709C18238}"
+      DTS:ObjectName="Excel Connection Manager 3">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="0"
+          DTS:ConnectRetryInterval="0"
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.16.0;Data Source=D:\Final Project\hheart\all.xls;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{7CF2406A-2121-494D-BAFB-941623CE812F}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="countd1">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{6ACE8406-8E5A-4254-B350-1BFDFD0D280A}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="countd2">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Diabetes"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{AF3251BE-E677-4585-8CEA-6C39B7C6FF47}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Diabetes"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Diabetes\Excel Destination"
+              componentClassID="Microsoft.ExcelDestination"
+              contactInfo="Excel Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Excel Destination"
+              name="Excel Destination"
+              usesDispositions="true">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">Excel_Destination$</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Diabetes\Excel Destination.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[alldiabetes]"
+                  connectionManagerRefId="Package.ConnectionManagers[alldiabetes]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Diabetes\Excel Destination.Inputs[Excel Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Excel Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Diabetes\Excel Destination.Inputs[Excel Destination Input].Columns[gender]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="gender"
+                      externalMetadataColumnId="Package\Diabetes\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[gender]"
+                      lineageId="Package\Diabetes\Union All.Outputs[Union All Output 1].Columns[gender]" />
+                    <inputColumn
+                      refId="Package\Diabetes\Excel Destination.Inputs[Excel Destination Input].Columns[age]"
+                      cachedDataType="r8"
+                      cachedName="age"
+                      externalMetadataColumnId="Package\Diabetes\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[age]"
+                      lineageId="Package\Diabetes\Union All.Outputs[Union All Output 1].Columns[age]" />
+                    <inputColumn
+                      refId="Package\Diabetes\Excel Destination.Inputs[Excel Destination Input].Columns[hypertension]"
+                      cachedDataType="r8"
+                      cachedName="hypertension"
+                      externalMetadataColumnId="Package\Diabetes\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[hypertension]"
+                      lineageId="Package\Diabetes\Union All.Outputs[Union All Output 1].Columns[hypertension]" />
+                    <inputColumn
+                      refId="Package\Diabetes\Excel Destination.Inputs[Excel Destination Input].Columns[heart_disease]"
+                      cachedDataType="r8"
+                      cachedName="heart_disease"
+                      externalMetadataColumnId="Package\Diabetes\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[heart_disease]"
+                      lineageId="Package\Diabetes\Union All.Outputs[Union All Output 1].Columns[heart_disease]" />
+                    <inputColumn
+                      refId="Package\Diabetes\Excel Destination.Inputs[Excel Destination Input].Columns[smoking_history]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="smoking_history"
+                      externalMetadataColumnId="Package\Diabetes\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[smoking_history]"
+                      lineageId="Package\Diabetes\Union All.Outputs[Union All Output 1].Columns[smoking_history]" />
+                    <inputColumn
+                      refId="Package\Diabetes\Excel Destination.Inputs[Excel Destination Input].Columns[bmi]"
+                      cachedDataType="r8"
+                      cachedName="bmi"
+                      externalMetadataColumnId="Package\Diabetes\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[bmi]"
+                      lineageId="Package\Diabetes\Union All.Outputs[Union All Output 1].Columns[bmi]" />
+                    <inputColumn
+                      refId="Package\Diabetes\Excel Destination.Inputs[Excel Destination Input].Columns[HbA1c_level]"
+                      cachedDataType="r8"
+                      cachedName="HbA1c_level"
+                      externalMetadataColumnId="Package\Diabetes\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[HbA1c_level]"
+                      lineageId="Package\Diabetes\Union All.Outputs[Union All Output 1].Columns[HbA1c_level]" />
+                    <inputColumn
+                      refId="Package\Diabetes\Excel Destination.Inputs[Excel Destination Input].Columns[blood_glucose_level]"
+                      cachedDataType="r8"
+                      cachedName="blood_glucose_level"
+                      externalMetadataColumnId="Package\Diabetes\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[blood_glucose_level]"
+                      lineageId="Package\Diabetes\Union All.Outputs[Union All Output 1].Columns[blood_glucose_level]" />
+                    <inputColumn
+                      refId="Package\Diabetes\Excel Destination.Inputs[Excel Destination Input].Columns[diabetes]"
+                      cachedDataType="r8"
+                      cachedName="diabetes"
+                      externalMetadataColumnId="Package\Diabetes\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[diabetes]"
+                      lineageId="Package\Diabetes\Union All.Outputs[Union All Output 1].Columns[diabetes]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Diabetes\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[gender]"
+                      dataType="wstr"
+                      length="255"
+                      name="gender" />
+                    <externalMetadataColumn
+                      refId="Package\Diabetes\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[age]"
+                      dataType="r8"
+                      name="age" />
+                    <externalMetadataColumn
+                      refId="Package\Diabetes\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[hypertension]"
+                      dataType="r8"
+                      name="hypertension" />
+                    <externalMetadataColumn
+                      refId="Package\Diabetes\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[heart_disease]"
+                      dataType="r8"
+                      name="heart_disease" />
+                    <externalMetadataColumn
+                      refId="Package\Diabetes\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[smoking_history]"
+                      dataType="wstr"
+                      length="255"
+                      name="smoking_history" />
+                    <externalMetadataColumn
+                      refId="Package\Diabetes\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[bmi]"
+                      dataType="r8"
+                      name="bmi" />
+                    <externalMetadataColumn
+                      refId="Package\Diabetes\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[HbA1c_level]"
+                      dataType="r8"
+                      name="HbA1c_level" />
+                    <externalMetadataColumn
+                      refId="Package\Diabetes\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[blood_glucose_level]"
+                      dataType="r8"
+                      name="blood_glucose_level" />
+                    <externalMetadataColumn
+                      refId="Package\Diabetes\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[diabetes]"
+                      dataType="r8"
+                      name="diabetes" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Diabetes\Excel Destination.Outputs[Excel Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Excel Destination Error Output"
+                  synchronousInputId="Package\Diabetes\Excel Destination.Inputs[Excel Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Diabetes\Excel Destination.Outputs[Excel Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Diabetes\Excel Destination.Outputs[Excel Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Diabetes\Excel Destination.Outputs[Excel Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Diabetes\Excel Destination.Outputs[Excel Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Diabetes\Excel Source"
+              componentClassID="Microsoft.ExcelSource"
+              contactInfo="Excel Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Excel Source"
+              name="Excel Source"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">Sheet1$</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mapping from parameters in the SQL command to variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Diabetes\Excel Source.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[d1]"
+                  connectionManagerRefId="Package.ConnectionManagers[d1]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Diabetes\Excel Source.Outputs[Excel Source Output]"
+                  name="Excel Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Diabetes\Excel Source.Outputs[Excel Source Output].Columns[gender]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Diabetes\Excel Source.Outputs[Excel Source Output].ExternalColumns[gender]"
+                      length="255"
+                      lineageId="Package\Diabetes\Excel Source.Outputs[Excel Source Output].Columns[gender]"
+                      name="gender"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Diabetes\Excel Source.Outputs[Excel Source Output].Columns[age]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Diabetes\Excel Source.Outputs[Excel Source Output].ExternalColumns[age]"
+                      lineageId="Package\Diabetes\Excel Source.Outputs[Excel Source Output].Columns[age]"
+                      name="age"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Diabetes\Excel Source.Outputs[Excel Source Output].Columns[hypertension]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Diabetes\Excel Source.Outputs[Excel Source Output].ExternalColumns[hypertension]"
+                      lineageId="Package\Diabetes\Excel Source.Outputs[Excel Source Output].Columns[hypertension]"
+                      name="hypertension"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Diabetes\Excel Source.Outputs[Excel Source Output].Columns[heart_disease]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Diabetes\Excel Source.Outputs[Excel Source Output].ExternalColumns[heart_disease]"
+                      lineageId="Package\Diabetes\Excel Source.Outputs[Excel Source Output].Columns[heart_disease]"
+                      name="heart_disease"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Diabetes\Excel Source.Outputs[Excel Source Output].Columns[smoking_history]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Diabetes\Excel Source.Outputs[Excel Source Output].ExternalColumns[smoking_history]"
+                      length="255"
+                      lineageId="Package\Diabetes\Excel Source.Outputs[Excel Source Output].Columns[smoking_history]"
+                      name="smoking_history"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Diabetes\Excel Source.Outputs[Excel Source Output].Columns[bmi]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Diabetes\Excel Source.Outputs[Excel Source Output].ExternalColumns[bmi]"
+                      lineageId="Package\Diabetes\Excel Source.Outputs[Excel Source Output].Columns[bmi]"
+                      name="bmi"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Diabetes\Excel Source.Outputs[Excel Source Output].Columns[HbA1c_level]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Diabetes\Excel Source.Outputs[Excel Source Output].ExternalColumns[HbA1c_level]"
+                      lineageId="Package\Diabetes\Excel Source.Outputs[Excel Source Output].Columns[HbA1c_level]"
+                      name="HbA1c_level"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Diabetes\Excel Source.Outputs[Excel Source Output].Columns[blood_glucose_level]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Diabetes\Excel Source.Outputs[Excel Source Output].ExternalColumns[blood_glucose_level]"
+                      lineageId="Package\Diabetes\Excel Source.Outputs[Excel Source Output].Columns[blood_glucose_level]"
+                      name="blood_glucose_level"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Diabetes\Excel Source.Outputs[Excel Source Output].Columns[diabetes]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Diabetes\Excel Source.Outputs[Excel Source Output].ExternalColumns[diabetes]"
+                      lineageId="Package\Diabetes\Excel Source.Outputs[Excel Source Output].Columns[diabetes]"
+                      name="diabetes"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Diabetes\Excel Source.Outputs[Excel Source Output].ExternalColumns[gender]"
+                      dataType="wstr"
+                      length="255"
+                      name="gender" />
+                    <externalMetadataColumn
+                      refId="Package\Diabetes\Excel Source.Outputs[Excel Source Output].ExternalColumns[age]"
+                      dataType="r8"
+                      name="age" />
+                    <externalMetadataColumn
+                      refId="Package\Diabetes\Excel Source.Outputs[Excel Source Output].ExternalColumns[hypertension]"
+                      dataType="r8"
+                      name="hypertension" />
+                    <externalMetadataColumn
+                      refId="Package\Diabetes\Excel Source.Outputs[Excel Source Output].ExternalColumns[heart_disease]"
+                      dataType="r8"
+                      name="heart_disease" />
+                    <externalMetadataColumn
+                      refId="Package\Diabetes\Excel Source.Outputs[Excel Source Output].ExternalColumns[smoking_history]"
+                      dataType="wstr"
+                      length="255"
+                      name="smoking_history" />
+                    <externalMetadataColumn
+                      refId="Package\Diabetes\Excel Source.Outputs[Excel Source Output].ExternalColumns[bmi]"
+                      dataType="r8"
+                      name="bmi" />
+                    <externalMetadataColumn
+                      refId="Package\Diabetes\Excel Source.Outputs[Excel Source Output].ExternalColumns[HbA1c_level]"
+                      dataType="r8"
+                      name="HbA1c_level" />
+                    <externalMetadataColumn
+                      refId="Package\Diabetes\Excel Source.Outputs[Excel Source Output].ExternalColumns[blood_glucose_level]"
+                      dataType="r8"
+                      name="blood_glucose_level" />
+                    <externalMetadataColumn
+                      refId="Package\Diabetes\Excel Source.Outputs[Excel Source Output].ExternalColumns[diabetes]"
+                      dataType="r8"
+                      name="diabetes" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Diabetes\Excel Source.Outputs[Excel Source Error Output]"
+                  isErrorOut="true"
+                  name="Excel Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Diabetes\Excel Source.Outputs[Excel Source Error Output].Columns[gender]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Diabetes\Excel Source.Outputs[Excel Source Error Output].Columns[gender]"
+                      name="gender" />
+                    <outputColumn
+                      refId="Package\Diabetes\Excel Source.Outputs[Excel Source Error Output].Columns[age]"
+                      dataType="r8"
+                      lineageId="Package\Diabetes\Excel Source.Outputs[Excel Source Error Output].Columns[age]"
+                      name="age" />
+                    <outputColumn
+                      refId="Package\Diabetes\Excel Source.Outputs[Excel Source Error Output].Columns[hypertension]"
+                      dataType="r8"
+                      lineageId="Package\Diabetes\Excel Source.Outputs[Excel Source Error Output].Columns[hypertension]"
+                      name="hypertension" />
+                    <outputColumn
+                      refId="Package\Diabetes\Excel Source.Outputs[Excel Source Error Output].Columns[heart_disease]"
+                      dataType="r8"
+                      lineageId="Package\Diabetes\Excel Source.Outputs[Excel Source Error Output].Columns[heart_disease]"
+                      name="heart_disease" />
+                    <outputColumn
+                      refId="Package\Diabetes\Excel Source.Outputs[Excel Source Error Output].Columns[smoking_history]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Diabetes\Excel Source.Outputs[Excel Source Error Output].Columns[smoking_history]"
+                      name="smoking_history" />
+                    <outputColumn
+                      refId="Package\Diabetes\Excel Source.Outputs[Excel Source Error Output].Columns[bmi]"
+                      dataType="r8"
+                      lineageId="Package\Diabetes\Excel Source.Outputs[Excel Source Error Output].Columns[bmi]"
+                      name="bmi" />
+                    <outputColumn
+                      refId="Package\Diabetes\Excel Source.Outputs[Excel Source Error Output].Columns[HbA1c_level]"
+                      dataType="r8"
+                      lineageId="Package\Diabetes\Excel Source.Outputs[Excel Source Error Output].Columns[HbA1c_level]"
+                      name="HbA1c_level" />
+                    <outputColumn
+                      refId="Package\Diabetes\Excel Source.Outputs[Excel Source Error Output].Columns[blood_glucose_level]"
+                      dataType="r8"
+                      lineageId="Package\Diabetes\Excel Source.Outputs[Excel Source Error Output].Columns[blood_glucose_level]"
+                      name="blood_glucose_level" />
+                    <outputColumn
+                      refId="Package\Diabetes\Excel Source.Outputs[Excel Source Error Output].Columns[diabetes]"
+                      dataType="r8"
+                      lineageId="Package\Diabetes\Excel Source.Outputs[Excel Source Error Output].Columns[diabetes]"
+                      name="diabetes" />
+                    <outputColumn
+                      refId="Package\Diabetes\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Diabetes\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Diabetes\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Diabetes\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Diabetes\Excel Source 1"
+              componentClassID="Microsoft.ExcelSource"
+              contactInfo="Excel Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Excel Source"
+              name="Excel Source 1"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">diabetes_prediction_dataset$</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mapping from parameters in the SQL command to variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Diabetes\Excel Source 1.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[d2]"
+                  connectionManagerRefId="Package.ConnectionManagers[d2]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Diabetes\Excel Source 1.Outputs[Excel Source Output]"
+                  name="Excel Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Diabetes\Excel Source 1.Outputs[Excel Source Output].Columns[gender]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Diabetes\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[gender]"
+                      length="255"
+                      lineageId="Package\Diabetes\Excel Source 1.Outputs[Excel Source Output].Columns[gender]"
+                      name="gender"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Diabetes\Excel Source 1.Outputs[Excel Source Output].Columns[age]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Diabetes\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[age]"
+                      lineageId="Package\Diabetes\Excel Source 1.Outputs[Excel Source Output].Columns[age]"
+                      name="age"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Diabetes\Excel Source 1.Outputs[Excel Source Output].Columns[hypertension]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Diabetes\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[hypertension]"
+                      lineageId="Package\Diabetes\Excel Source 1.Outputs[Excel Source Output].Columns[hypertension]"
+                      name="hypertension"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Diabetes\Excel Source 1.Outputs[Excel Source Output].Columns[heart_disease]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Diabetes\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[heart_disease]"
+                      lineageId="Package\Diabetes\Excel Source 1.Outputs[Excel Source Output].Columns[heart_disease]"
+                      name="heart_disease"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Diabetes\Excel Source 1.Outputs[Excel Source Output].Columns[smoking_history]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Diabetes\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[smoking_history]"
+                      length="255"
+                      lineageId="Package\Diabetes\Excel Source 1.Outputs[Excel Source Output].Columns[smoking_history]"
+                      name="smoking_history"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Diabetes\Excel Source 1.Outputs[Excel Source Output].Columns[bmi]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Diabetes\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[bmi]"
+                      lineageId="Package\Diabetes\Excel Source 1.Outputs[Excel Source Output].Columns[bmi]"
+                      name="bmi"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Diabetes\Excel Source 1.Outputs[Excel Source Output].Columns[HbA1c_level]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Diabetes\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[HbA1c_level]"
+                      lineageId="Package\Diabetes\Excel Source 1.Outputs[Excel Source Output].Columns[HbA1c_level]"
+                      name="HbA1c_level"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Diabetes\Excel Source 1.Outputs[Excel Source Output].Columns[blood_glucose_level]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Diabetes\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[blood_glucose_level]"
+                      lineageId="Package\Diabetes\Excel Source 1.Outputs[Excel Source Output].Columns[blood_glucose_level]"
+                      name="blood_glucose_level"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Diabetes\Excel Source 1.Outputs[Excel Source Output].Columns[diabetes]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Diabetes\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[diabetes]"
+                      lineageId="Package\Diabetes\Excel Source 1.Outputs[Excel Source Output].Columns[diabetes]"
+                      name="diabetes"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Diabetes\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[gender]"
+                      dataType="wstr"
+                      length="255"
+                      name="gender" />
+                    <externalMetadataColumn
+                      refId="Package\Diabetes\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[age]"
+                      dataType="r8"
+                      name="age" />
+                    <externalMetadataColumn
+                      refId="Package\Diabetes\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[hypertension]"
+                      dataType="r8"
+                      name="hypertension" />
+                    <externalMetadataColumn
+                      refId="Package\Diabetes\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[heart_disease]"
+                      dataType="r8"
+                      name="heart_disease" />
+                    <externalMetadataColumn
+                      refId="Package\Diabetes\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[smoking_history]"
+                      dataType="wstr"
+                      length="255"
+                      name="smoking_history" />
+                    <externalMetadataColumn
+                      refId="Package\Diabetes\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[bmi]"
+                      dataType="r8"
+                      name="bmi" />
+                    <externalMetadataColumn
+                      refId="Package\Diabetes\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[HbA1c_level]"
+                      dataType="r8"
+                      name="HbA1c_level" />
+                    <externalMetadataColumn
+                      refId="Package\Diabetes\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[blood_glucose_level]"
+                      dataType="r8"
+                      name="blood_glucose_level" />
+                    <externalMetadataColumn
+                      refId="Package\Diabetes\Excel Source 1.Outputs[Excel Source Output].ExternalColumns[diabetes]"
+                      dataType="r8"
+                      name="diabetes" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Diabetes\Excel Source 1.Outputs[Excel Source Error Output]"
+                  isErrorOut="true"
+                  name="Excel Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Diabetes\Excel Source 1.Outputs[Excel Source Error Output].Columns[gender]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Diabetes\Excel Source 1.Outputs[Excel Source Error Output].Columns[gender]"
+                      name="gender" />
+                    <outputColumn
+                      refId="Package\Diabetes\Excel Source 1.Outputs[Excel Source Error Output].Columns[age]"
+                      dataType="r8"
+                      lineageId="Package\Diabetes\Excel Source 1.Outputs[Excel Source Error Output].Columns[age]"
+                      name="age" />
+                    <outputColumn
+                      refId="Package\Diabetes\Excel Source 1.Outputs[Excel Source Error Output].Columns[hypertension]"
+                      dataType="r8"
+                      lineageId="Package\Diabetes\Excel Source 1.Outputs[Excel Source Error Output].Columns[hypertension]"
+                      name="hypertension" />
+                    <outputColumn
+                      refId="Package\Diabetes\Excel Source 1.Outputs[Excel Source Error Output].Columns[heart_disease]"
+                      dataType="r8"
+                      lineageId="Package\Diabetes\Excel Source 1.Outputs[Excel Source Error Output].Columns[heart_disease]"
+                      name="heart_disease" />
+                    <outputColumn
+                      refId="Package\Diabetes\Excel Source 1.Outputs[Excel Source Error Output].Columns[smoking_history]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Diabetes\Excel Source 1.Outputs[Excel Source Error Output].Columns[smoking_history]"
+                      name="smoking_history" />
+                    <outputColumn
+                      refId="Package\Diabetes\Excel Source 1.Outputs[Excel Source Error Output].Columns[bmi]"
+                      dataType="r8"
+                      lineageId="Package\Diabetes\Excel Source 1.Outputs[Excel Source Error Output].Columns[bmi]"
+                      name="bmi" />
+                    <outputColumn
+                      refId="Package\Diabetes\Excel Source 1.Outputs[Excel Source Error Output].Columns[HbA1c_level]"
+                      dataType="r8"
+                      lineageId="Package\Diabetes\Excel Source 1.Outputs[Excel Source Error Output].Columns[HbA1c_level]"
+                      name="HbA1c_level" />
+                    <outputColumn
+                      refId="Package\Diabetes\Excel Source 1.Outputs[Excel Source Error Output].Columns[blood_glucose_level]"
+                      dataType="r8"
+                      lineageId="Package\Diabetes\Excel Source 1.Outputs[Excel Source Error Output].Columns[blood_glucose_level]"
+                      name="blood_glucose_level" />
+                    <outputColumn
+                      refId="Package\Diabetes\Excel Source 1.Outputs[Excel Source Error Output].Columns[diabetes]"
+                      dataType="r8"
+                      lineageId="Package\Diabetes\Excel Source 1.Outputs[Excel Source Error Output].Columns[diabetes]"
+                      name="diabetes" />
+                    <outputColumn
+                      refId="Package\Diabetes\Excel Source 1.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Diabetes\Excel Source 1.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Diabetes\Excel Source 1.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Diabetes\Excel Source 1.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Diabetes\Union All"
+              componentClassID="Microsoft.UnionAll"
+              contactInfo="Union All;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Combines rows from multiple data flows without sorting. For example, add rows back to a data flow after correction of errors. If sorting is important, we recommend using the Merge transformation."
+              name="Union All"
+              version="1">
+              <inputs>
+                <input
+                  refId="Package\Diabetes\Union All.Inputs[Union All Input 3]"
+                  hasSideEffects="true"
+                  name="Union All Input 3">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Diabetes\Union All.Inputs[Union All Input 3].Columns[gender]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="gender"
+                      lineageId="Package\Diabetes\Excel Source.Outputs[Excel Source Output].Columns[gender]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Diabetes\Union All.Outputs[Union All Output 1].Columns[gender]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Diabetes\Union All.Inputs[Union All Input 3].Columns[age]"
+                      cachedDataType="r8"
+                      cachedName="age"
+                      lineageId="Package\Diabetes\Excel Source.Outputs[Excel Source Output].Columns[age]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Diabetes\Union All.Outputs[Union All Output 1].Columns[age]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Diabetes\Union All.Inputs[Union All Input 3].Columns[hypertension]"
+                      cachedDataType="r8"
+                      cachedName="hypertension"
+                      lineageId="Package\Diabetes\Excel Source.Outputs[Excel Source Output].Columns[hypertension]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Diabetes\Union All.Outputs[Union All Output 1].Columns[hypertension]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Diabetes\Union All.Inputs[Union All Input 3].Columns[heart_disease]"
+                      cachedDataType="r8"
+                      cachedName="heart_disease"
+                      lineageId="Package\Diabetes\Excel Source.Outputs[Excel Source Output].Columns[heart_disease]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Diabetes\Union All.Outputs[Union All Output 1].Columns[heart_disease]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Diabetes\Union All.Inputs[Union All Input 3].Columns[smoking_history]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="smoking_history"
+                      lineageId="Package\Diabetes\Excel Source.Outputs[Excel Source Output].Columns[smoking_history]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Diabetes\Union All.Outputs[Union All Output 1].Columns[smoking_history]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Diabetes\Union All.Inputs[Union All Input 3].Columns[bmi]"
+                      cachedDataType="r8"
+                      cachedName="bmi"
+                      lineageId="Package\Diabetes\Excel Source.Outputs[Excel Source Output].Columns[bmi]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Diabetes\Union All.Outputs[Union All Output 1].Columns[bmi]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Diabetes\Union All.Inputs[Union All Input 3].Columns[HbA1c_level]"
+                      cachedDataType="r8"
+                      cachedName="HbA1c_level"
+                      lineageId="Package\Diabetes\Excel Source.Outputs[Excel Source Output].Columns[HbA1c_level]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Diabetes\Union All.Outputs[Union All Output 1].Columns[HbA1c_level]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Diabetes\Union All.Inputs[Union All Input 3].Columns[blood_glucose_level]"
+                      cachedDataType="r8"
+                      cachedName="blood_glucose_level"
+                      lineageId="Package\Diabetes\Excel Source.Outputs[Excel Source Output].Columns[blood_glucose_level]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Diabetes\Union All.Outputs[Union All Output 1].Columns[blood_glucose_level]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Diabetes\Union All.Inputs[Union All Input 3].Columns[diabetes]"
+                      cachedDataType="r8"
+                      cachedName="diabetes"
+                      lineageId="Package\Diabetes\Excel Source.Outputs[Excel Source Output].Columns[diabetes]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Diabetes\Union All.Outputs[Union All Output 1].Columns[diabetes]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Diabetes\Union All.Inputs[Union All Input 1]"
+                  hasSideEffects="true"
+                  name="Union All Input 1">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Diabetes\Union All.Inputs[Union All Input 1].Columns[gender]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="gender"
+                      lineageId="Package\Diabetes\Excel Source 1.Outputs[Excel Source Output].Columns[gender]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Diabetes\Union All.Outputs[Union All Output 1].Columns[gender]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Diabetes\Union All.Inputs[Union All Input 1].Columns[age]"
+                      cachedDataType="r8"
+                      cachedName="age"
+                      lineageId="Package\Diabetes\Excel Source 1.Outputs[Excel Source Output].Columns[age]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Diabetes\Union All.Outputs[Union All Output 1].Columns[age]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Diabetes\Union All.Inputs[Union All Input 1].Columns[hypertension]"
+                      cachedDataType="r8"
+                      cachedName="hypertension"
+                      lineageId="Package\Diabetes\Excel Source 1.Outputs[Excel Source Output].Columns[hypertension]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Diabetes\Union All.Outputs[Union All Output 1].Columns[hypertension]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Diabetes\Union All.Inputs[Union All Input 1].Columns[heart_disease]"
+                      cachedDataType="r8"
+                      cachedName="heart_disease"
+                      lineageId="Package\Diabetes\Excel Source 1.Outputs[Excel Source Output].Columns[heart_disease]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Diabetes\Union All.Outputs[Union All Output 1].Columns[heart_disease]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Diabetes\Union All.Inputs[Union All Input 1].Columns[smoking_history]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="smoking_history"
+                      lineageId="Package\Diabetes\Excel Source 1.Outputs[Excel Source Output].Columns[smoking_history]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Diabetes\Union All.Outputs[Union All Output 1].Columns[smoking_history]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Diabetes\Union All.Inputs[Union All Input 1].Columns[bmi]"
+                      cachedDataType="r8"
+                      cachedName="bmi"
+                      lineageId="Package\Diabetes\Excel Source 1.Outputs[Excel Source Output].Columns[bmi]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Diabetes\Union All.Outputs[Union All Output 1].Columns[bmi]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Diabetes\Union All.Inputs[Union All Input 1].Columns[HbA1c_level]"
+                      cachedDataType="r8"
+                      cachedName="HbA1c_level"
+                      lineageId="Package\Diabetes\Excel Source 1.Outputs[Excel Source Output].Columns[HbA1c_level]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Diabetes\Union All.Outputs[Union All Output 1].Columns[HbA1c_level]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Diabetes\Union All.Inputs[Union All Input 1].Columns[blood_glucose_level]"
+                      cachedDataType="r8"
+                      cachedName="blood_glucose_level"
+                      lineageId="Package\Diabetes\Excel Source 1.Outputs[Excel Source Output].Columns[blood_glucose_level]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Diabetes\Union All.Outputs[Union All Output 1].Columns[blood_glucose_level]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Diabetes\Union All.Inputs[Union All Input 1].Columns[diabetes]"
+                      cachedDataType="r8"
+                      cachedName="diabetes"
+                      lineageId="Package\Diabetes\Excel Source 1.Outputs[Excel Source Output].Columns[diabetes]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Diabetes\Union All.Outputs[Union All Output 1].Columns[diabetes]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Diabetes\Union All.Inputs[Union All Input 2]"
+                  dangling="true"
+                  hasSideEffects="true"
+                  name="Union All Input 2">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Diabetes\Union All.Outputs[Union All Output 1]"
+                  name="Union All Output 1">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Diabetes\Union All.Outputs[Union All Output 1].Columns[gender]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Diabetes\Union All.Outputs[Union All Output 1].Columns[gender]"
+                      name="gender" />
+                    <outputColumn
+                      refId="Package\Diabetes\Union All.Outputs[Union All Output 1].Columns[age]"
+                      dataType="r8"
+                      lineageId="Package\Diabetes\Union All.Outputs[Union All Output 1].Columns[age]"
+                      name="age" />
+                    <outputColumn
+                      refId="Package\Diabetes\Union All.Outputs[Union All Output 1].Columns[hypertension]"
+                      dataType="r8"
+                      lineageId="Package\Diabetes\Union All.Outputs[Union All Output 1].Columns[hypertension]"
+                      name="hypertension" />
+                    <outputColumn
+                      refId="Package\Diabetes\Union All.Outputs[Union All Output 1].Columns[heart_disease]"
+                      dataType="r8"
+                      lineageId="Package\Diabetes\Union All.Outputs[Union All Output 1].Columns[heart_disease]"
+                      name="heart_disease" />
+                    <outputColumn
+                      refId="Package\Diabetes\Union All.Outputs[Union All Output 1].Columns[smoking_history]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Diabetes\Union All.Outputs[Union All Output 1].Columns[smoking_history]"
+                      name="smoking_history" />
+                    <outputColumn
+                      refId="Package\Diabetes\Union All.Outputs[Union All Output 1].Columns[bmi]"
+                      dataType="r8"
+                      lineageId="Package\Diabetes\Union All.Outputs[Union All Output 1].Columns[bmi]"
+                      name="bmi" />
+                    <outputColumn
+                      refId="Package\Diabetes\Union All.Outputs[Union All Output 1].Columns[HbA1c_level]"
+                      dataType="r8"
+                      lineageId="Package\Diabetes\Union All.Outputs[Union All Output 1].Columns[HbA1c_level]"
+                      name="HbA1c_level" />
+                    <outputColumn
+                      refId="Package\Diabetes\Union All.Outputs[Union All Output 1].Columns[blood_glucose_level]"
+                      dataType="r8"
+                      lineageId="Package\Diabetes\Union All.Outputs[Union All Output 1].Columns[blood_glucose_level]"
+                      name="blood_glucose_level" />
+                    <outputColumn
+                      refId="Package\Diabetes\Union All.Outputs[Union All Output 1].Columns[diabetes]"
+                      dataType="r8"
+                      lineageId="Package\Diabetes\Union All.Outputs[Union All Output 1].Columns[diabetes]"
+                      name="diabetes" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Diabetes.Paths[Excel Source Output]"
+              endId="Package\Diabetes\Union All.Inputs[Union All Input 3]"
+              name="Excel Source Output"
+              startId="Package\Diabetes\Excel Source.Outputs[Excel Source Output]" />
+            <path
+              refId="Package\Diabetes.Paths[Excel Source Output1]"
+              endId="Package\Diabetes\Union All.Inputs[Union All Input 1]"
+              name="Excel Source Output"
+              startId="Package\Diabetes\Excel Source 1.Outputs[Excel Source Output]" />
+            <path
+              refId="Package\Diabetes.Paths[Union All Output 1]"
+              endId="Package\Diabetes\Excel Destination.Inputs[Excel Destination Input]"
+              name="Union All Output 1"
+              startId="Package\Diabetes\Union All.Outputs[Union All Output 1]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="119.2,41.6"
+          Id="Package\Diabetes"
+          TopLeft="462.999975003303,178.833332127995" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Diabetes">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="148,41.6"
+          Id="Package\Diabetes\Excel Source 1"
+          TopLeft="609.333330677615,92.3999991039436" />
+        <NodeLayout
+          Size="120,41.6"
+          Id="Package\Diabetes\Union All"
+          TopLeft="510.666664156648,221.333330057727" />
+        <NodeLayout
+          Size="159.2,41.6"
+          Id="Package\Diabetes\Excel Destination"
+          TopLeft="498.333331139552,345.133328080243" />
+        <NodeLayout
+          Size="140,41.6"
+          Id="Package\Diabetes\Excel Source"
+          TopLeft="347.999999384085,90.7333324965503" />
+        <EdgeLayout
+          Id="Package\Diabetes.Paths[Union All Output 1]"
+          TopLeft="574.2999976481,262.933330057727">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,82.1999980225164"
+              Start="0,0"
+              End="0,74.6999980225164">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,74.6999980225164" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Diabetes.Paths[Excel Source Output1]"
+          TopLeft="683.333330677615,133.999999103944">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-93.9999998543001,87.3333309537834"
+              Start="0,0"
+              End="-93.9999998543001,79.8333309537834">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,47.7105249068454" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,47.7105249068454"
+                    Point2="0,51.7105249068454"
+                    Point3="-4,51.7105249068454" />
+                  <mssgle:LineSegment
+                    End="-89.9999998543001,51.7105249068454" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-89.9999998543001,51.7105249068454"
+                    Point2="-93.9999998543001,51.7105249068454"
+                    Point3="-93.9999998543001,55.7105249068454" />
+                  <mssgle:LineSegment
+                    End="-93.9999998543001,79.8333309537834" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Diabetes.Paths[Excel Source Output]"
+          TopLeft="417.999999384085,132.33333249655">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="152.666664772564,88.9999975611767"
+              Start="0,0"
+              End="152.666664772564,81.4999975611767">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,40.4999987805883" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,40.4999987805883"
+                    Point2="0,44.4999987805883"
+                    Point3="4,44.4999987805883" />
+                  <mssgle:LineSegment
+                    End="148.666664772564,44.4999987805883" />
+                  <mssgle:CubicBezierSegment
+                    Point1="148.666664772564,44.4999987805883"
+                    Point2="152.666664772564,44.4999987805883"
+                    Point3="152.666664772564,48.4999987805883" />
+                  <mssgle:LineSegment
+                    End="152.666664772564,81.4999975611767" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Diabetes\Excel Source 1">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Diabetes\Excel Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Diabetes\Excel Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

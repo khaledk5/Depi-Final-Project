@@ -1,0 +1,1688 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="10/1/2024 11:20:38 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="LAPTOP-LVUEN91N"
+  DTS:CreatorName="LAPTOP-LVUEN91N\user"
+  DTS:DTSID="{883BF7FB-F66A-40D9-8916-7EA15A95DB73}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5556.0"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="DWH"
+  DTS:PackageType="5"
+  DTS:VersionBuild="10"
+  DTS:VersionGUID="{B8F5AB72-DF47-4419-BBE2-B2251422D69A}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LAPTOP-LVUEN91N\MSSQLSERVER1.DWH_project]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{BAFCEA0E-3C64-44B0-AB81-FC9F0EAE4E5D}"
+      DTS:ObjectName="LAPTOP-LVUEN91N\MSSQLSERVER1.DWH_project">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=LAPTOP-LVUEN91N\MSSQLSERVER1;Initial Catalog=DWH_project;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LAPTOP-LVUEN91N\MSSQLSERVER1.DWH_project 1]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{6CCC7CAA-0FF0-437B-95CC-52DAC0A92538}"
+      DTS:ObjectName="LAPTOP-LVUEN91N\MSSQLSERVER1.DWH_project 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=LAPTOP-LVUEN91N\MSSQLSERVER1;Initial Catalog=DWH_project;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LAPTOP-LVUEN91N\MSSQLSERVER1.DWH_project 2]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{8211FA17-3CC7-4045-BA81-AA34945D0B22}"
+      DTS:ObjectName="LAPTOP-LVUEN91N\MSSQLSERVER1.DWH_project 2">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=LAPTOP-LVUEN91N\MSSQLSERVER1;Initial Catalog=DWH_project;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LAPTOP-LVUEN91N\MSSQLSERVER1.DWH_project 3]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{687F8309-B969-4A40-BBD9-C96651B38BB6}"
+      DTS:ObjectName="LAPTOP-LVUEN91N\MSSQLSERVER1.DWH_project 3">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=LAPTOP-LVUEN91N\MSSQLSERVER1;Initial Catalog=DWH_project;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LAPTOP-LVUEN91N\MSSQLSERVER1.staging1]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{CDA17EC8-82CF-44F0-987B-73354FD653E7}"
+      DTS:ObjectName="LAPTOP-LVUEN91N\MSSQLSERVER1.staging1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=LAPTOP-LVUEN91N\MSSQLSERVER1;Initial Catalog=staging1;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LAPTOP-LVUEN91N\MSSQLSERVER1.staging1 1]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{DD507AFB-664B-4997-B30D-B2546604F1BA}"
+      DTS:ObjectName="LAPTOP-LVUEN91N\MSSQLSERVER1.staging1 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=LAPTOP-LVUEN91N\MSSQLSERVER1;Initial Catalog=staging1;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LAPTOP-LVUEN91N\MSSQLSERVER1.staging1 2]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{5AD9DB5C-1BDF-4DE9-BB10-3351D23EF62D}"
+      DTS:ObjectName="LAPTOP-LVUEN91N\MSSQLSERVER1.staging1 2">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=LAPTOP-LVUEN91N\MSSQLSERVER1;Initial Catalog=staging1;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LAPTOP-LVUEN91N\MSSQLSERVER1.staging1 3]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{352A56C3-0A10-471E-8589-1559F5D08C81}"
+      DTS:ObjectName="LAPTOP-LVUEN91N\MSSQLSERVER1.staging1 3">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=LAPTOP-LVUEN91N\MSSQLSERVER1;Initial Catalog=staging1;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Data Flow Task"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{2F9446D6-1E36-4C15-8B78-C18564EA265D}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Data Flow Task"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Data Flow Task\brain stroke Source"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="brain stroke Source"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[brainstroke]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT age, hypertension, heart_disease, ever_married, avg_glucose_level, bmi, smoking_status, stroke
+FROM     dbo.brainstroke</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\brain stroke Source.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LAPTOP-LVUEN91N\MSSQLSERVER1.staging1]"
+                  connectionManagerRefId="Package.ConnectionManagers[LAPTOP-LVUEN91N\MSSQLSERVER1.staging1]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\brain stroke Source.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\brain stroke Source.Outputs[OLE DB Source Output].Columns[age]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\brain stroke Source.Outputs[OLE DB Source Output].ExternalColumns[age]"
+                      lineageId="Package\Data Flow Task\brain stroke Source.Outputs[OLE DB Source Output].Columns[age]"
+                      name="age"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\brain stroke Source.Outputs[OLE DB Source Output].Columns[hypertension]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\brain stroke Source.Outputs[OLE DB Source Output].ExternalColumns[hypertension]"
+                      lineageId="Package\Data Flow Task\brain stroke Source.Outputs[OLE DB Source Output].Columns[hypertension]"
+                      name="hypertension"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\brain stroke Source.Outputs[OLE DB Source Output].Columns[heart_disease]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\brain stroke Source.Outputs[OLE DB Source Output].ExternalColumns[heart_disease]"
+                      lineageId="Package\Data Flow Task\brain stroke Source.Outputs[OLE DB Source Output].Columns[heart_disease]"
+                      name="heart_disease"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\brain stroke Source.Outputs[OLE DB Source Output].Columns[ever_married]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\brain stroke Source.Outputs[OLE DB Source Output].ExternalColumns[ever_married]"
+                      length="255"
+                      lineageId="Package\Data Flow Task\brain stroke Source.Outputs[OLE DB Source Output].Columns[ever_married]"
+                      name="ever_married"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\brain stroke Source.Outputs[OLE DB Source Output].Columns[avg_glucose_level]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\brain stroke Source.Outputs[OLE DB Source Output].ExternalColumns[avg_glucose_level]"
+                      lineageId="Package\Data Flow Task\brain stroke Source.Outputs[OLE DB Source Output].Columns[avg_glucose_level]"
+                      name="avg_glucose_level"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\brain stroke Source.Outputs[OLE DB Source Output].Columns[bmi]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\brain stroke Source.Outputs[OLE DB Source Output].ExternalColumns[bmi]"
+                      lineageId="Package\Data Flow Task\brain stroke Source.Outputs[OLE DB Source Output].Columns[bmi]"
+                      name="bmi"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\brain stroke Source.Outputs[OLE DB Source Output].Columns[smoking_status]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\brain stroke Source.Outputs[OLE DB Source Output].ExternalColumns[smoking_status]"
+                      length="255"
+                      lineageId="Package\Data Flow Task\brain stroke Source.Outputs[OLE DB Source Output].Columns[smoking_status]"
+                      name="smoking_status"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\brain stroke Source.Outputs[OLE DB Source Output].Columns[stroke]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\brain stroke Source.Outputs[OLE DB Source Output].ExternalColumns[stroke]"
+                      lineageId="Package\Data Flow Task\brain stroke Source.Outputs[OLE DB Source Output].Columns[stroke]"
+                      name="stroke"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\brain stroke Source.Outputs[OLE DB Source Output].ExternalColumns[age]"
+                      dataType="r8"
+                      name="age" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\brain stroke Source.Outputs[OLE DB Source Output].ExternalColumns[hypertension]"
+                      dataType="r8"
+                      name="hypertension" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\brain stroke Source.Outputs[OLE DB Source Output].ExternalColumns[heart_disease]"
+                      dataType="r8"
+                      name="heart_disease" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\brain stroke Source.Outputs[OLE DB Source Output].ExternalColumns[ever_married]"
+                      dataType="wstr"
+                      length="255"
+                      name="ever_married" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\brain stroke Source.Outputs[OLE DB Source Output].ExternalColumns[avg_glucose_level]"
+                      dataType="r8"
+                      name="avg_glucose_level" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\brain stroke Source.Outputs[OLE DB Source Output].ExternalColumns[bmi]"
+                      dataType="r8"
+                      name="bmi" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\brain stroke Source.Outputs[OLE DB Source Output].ExternalColumns[smoking_status]"
+                      dataType="wstr"
+                      length="255"
+                      name="smoking_status" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\brain stroke Source.Outputs[OLE DB Source Output].ExternalColumns[stroke]"
+                      dataType="r8"
+                      name="stroke" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Data Flow Task\brain stroke Source.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\brain stroke Source.Outputs[OLE DB Source Error Output].Columns[age]"
+                      dataType="r8"
+                      lineageId="Package\Data Flow Task\brain stroke Source.Outputs[OLE DB Source Error Output].Columns[age]"
+                      name="age" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\brain stroke Source.Outputs[OLE DB Source Error Output].Columns[hypertension]"
+                      dataType="r8"
+                      lineageId="Package\Data Flow Task\brain stroke Source.Outputs[OLE DB Source Error Output].Columns[hypertension]"
+                      name="hypertension" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\brain stroke Source.Outputs[OLE DB Source Error Output].Columns[heart_disease]"
+                      dataType="r8"
+                      lineageId="Package\Data Flow Task\brain stroke Source.Outputs[OLE DB Source Error Output].Columns[heart_disease]"
+                      name="heart_disease" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\brain stroke Source.Outputs[OLE DB Source Error Output].Columns[ever_married]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Data Flow Task\brain stroke Source.Outputs[OLE DB Source Error Output].Columns[ever_married]"
+                      name="ever_married" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\brain stroke Source.Outputs[OLE DB Source Error Output].Columns[avg_glucose_level]"
+                      dataType="r8"
+                      lineageId="Package\Data Flow Task\brain stroke Source.Outputs[OLE DB Source Error Output].Columns[avg_glucose_level]"
+                      name="avg_glucose_level" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\brain stroke Source.Outputs[OLE DB Source Error Output].Columns[bmi]"
+                      dataType="r8"
+                      lineageId="Package\Data Flow Task\brain stroke Source.Outputs[OLE DB Source Error Output].Columns[bmi]"
+                      name="bmi" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\brain stroke Source.Outputs[OLE DB Source Error Output].Columns[smoking_status]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Data Flow Task\brain stroke Source.Outputs[OLE DB Source Error Output].Columns[smoking_status]"
+                      name="smoking_status" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\brain stroke Source.Outputs[OLE DB Source Error Output].Columns[stroke]"
+                      dataType="r8"
+                      lineageId="Package\Data Flow Task\brain stroke Source.Outputs[OLE DB Source Error Output].Columns[stroke]"
+                      name="stroke" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\brain stroke Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\brain stroke Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\brain stroke Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\brain stroke Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\Diabetes Source"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Diabetes Source"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[diabetes]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT age, hypertension, heart_disease, smoking_history, bmi, HbA1c_level, blood_glucose_level, diabetes
+FROM     dbo.diabetes</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\Diabetes Source.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LAPTOP-LVUEN91N\MSSQLSERVER1.staging1 1]"
+                  connectionManagerRefId="Package.ConnectionManagers[LAPTOP-LVUEN91N\MSSQLSERVER1.staging1 1]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\Diabetes Source.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Diabetes Source.Outputs[OLE DB Source Output].Columns[age]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Diabetes Source.Outputs[OLE DB Source Output].ExternalColumns[age]"
+                      lineageId="Package\Data Flow Task\Diabetes Source.Outputs[OLE DB Source Output].Columns[age]"
+                      name="age"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Diabetes Source.Outputs[OLE DB Source Output].Columns[hypertension]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Diabetes Source.Outputs[OLE DB Source Output].ExternalColumns[hypertension]"
+                      lineageId="Package\Data Flow Task\Diabetes Source.Outputs[OLE DB Source Output].Columns[hypertension]"
+                      name="hypertension"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Diabetes Source.Outputs[OLE DB Source Output].Columns[heart_disease]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Diabetes Source.Outputs[OLE DB Source Output].ExternalColumns[heart_disease]"
+                      lineageId="Package\Data Flow Task\Diabetes Source.Outputs[OLE DB Source Output].Columns[heart_disease]"
+                      name="heart_disease"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Diabetes Source.Outputs[OLE DB Source Output].Columns[smoking_history]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Diabetes Source.Outputs[OLE DB Source Output].ExternalColumns[smoking_history]"
+                      length="255"
+                      lineageId="Package\Data Flow Task\Diabetes Source.Outputs[OLE DB Source Output].Columns[smoking_history]"
+                      name="smoking_history"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Diabetes Source.Outputs[OLE DB Source Output].Columns[bmi]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Diabetes Source.Outputs[OLE DB Source Output].ExternalColumns[bmi]"
+                      lineageId="Package\Data Flow Task\Diabetes Source.Outputs[OLE DB Source Output].Columns[bmi]"
+                      name="bmi"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Diabetes Source.Outputs[OLE DB Source Output].Columns[HbA1c_level]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Diabetes Source.Outputs[OLE DB Source Output].ExternalColumns[HbA1c_level]"
+                      lineageId="Package\Data Flow Task\Diabetes Source.Outputs[OLE DB Source Output].Columns[HbA1c_level]"
+                      name="HbA1c_level"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Diabetes Source.Outputs[OLE DB Source Output].Columns[blood_glucose_level]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Diabetes Source.Outputs[OLE DB Source Output].ExternalColumns[blood_glucose_level]"
+                      lineageId="Package\Data Flow Task\Diabetes Source.Outputs[OLE DB Source Output].Columns[blood_glucose_level]"
+                      name="blood_glucose_level"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Diabetes Source.Outputs[OLE DB Source Output].Columns[diabetes]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Diabetes Source.Outputs[OLE DB Source Output].ExternalColumns[diabetes]"
+                      lineageId="Package\Data Flow Task\Diabetes Source.Outputs[OLE DB Source Output].Columns[diabetes]"
+                      name="diabetes"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Diabetes Source.Outputs[OLE DB Source Output].ExternalColumns[age]"
+                      dataType="r8"
+                      name="age" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Diabetes Source.Outputs[OLE DB Source Output].ExternalColumns[hypertension]"
+                      dataType="r8"
+                      name="hypertension" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Diabetes Source.Outputs[OLE DB Source Output].ExternalColumns[heart_disease]"
+                      dataType="r8"
+                      name="heart_disease" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Diabetes Source.Outputs[OLE DB Source Output].ExternalColumns[smoking_history]"
+                      dataType="wstr"
+                      length="255"
+                      name="smoking_history" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Diabetes Source.Outputs[OLE DB Source Output].ExternalColumns[bmi]"
+                      dataType="r8"
+                      name="bmi" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Diabetes Source.Outputs[OLE DB Source Output].ExternalColumns[HbA1c_level]"
+                      dataType="r8"
+                      name="HbA1c_level" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Diabetes Source.Outputs[OLE DB Source Output].ExternalColumns[blood_glucose_level]"
+                      dataType="r8"
+                      name="blood_glucose_level" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Diabetes Source.Outputs[OLE DB Source Output].ExternalColumns[diabetes]"
+                      dataType="r8"
+                      name="diabetes" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Data Flow Task\Diabetes Source.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Diabetes Source.Outputs[OLE DB Source Error Output].Columns[age]"
+                      dataType="r8"
+                      lineageId="Package\Data Flow Task\Diabetes Source.Outputs[OLE DB Source Error Output].Columns[age]"
+                      name="age" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Diabetes Source.Outputs[OLE DB Source Error Output].Columns[hypertension]"
+                      dataType="r8"
+                      lineageId="Package\Data Flow Task\Diabetes Source.Outputs[OLE DB Source Error Output].Columns[hypertension]"
+                      name="hypertension" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Diabetes Source.Outputs[OLE DB Source Error Output].Columns[heart_disease]"
+                      dataType="r8"
+                      lineageId="Package\Data Flow Task\Diabetes Source.Outputs[OLE DB Source Error Output].Columns[heart_disease]"
+                      name="heart_disease" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Diabetes Source.Outputs[OLE DB Source Error Output].Columns[smoking_history]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Data Flow Task\Diabetes Source.Outputs[OLE DB Source Error Output].Columns[smoking_history]"
+                      name="smoking_history" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Diabetes Source.Outputs[OLE DB Source Error Output].Columns[bmi]"
+                      dataType="r8"
+                      lineageId="Package\Data Flow Task\Diabetes Source.Outputs[OLE DB Source Error Output].Columns[bmi]"
+                      name="bmi" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Diabetes Source.Outputs[OLE DB Source Error Output].Columns[HbA1c_level]"
+                      dataType="r8"
+                      lineageId="Package\Data Flow Task\Diabetes Source.Outputs[OLE DB Source Error Output].Columns[HbA1c_level]"
+                      name="HbA1c_level" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Diabetes Source.Outputs[OLE DB Source Error Output].Columns[blood_glucose_level]"
+                      dataType="r8"
+                      lineageId="Package\Data Flow Task\Diabetes Source.Outputs[OLE DB Source Error Output].Columns[blood_glucose_level]"
+                      name="blood_glucose_level" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Diabetes Source.Outputs[OLE DB Source Error Output].Columns[diabetes]"
+                      dataType="r8"
+                      lineageId="Package\Data Flow Task\Diabetes Source.Outputs[OLE DB Source Error Output].Columns[diabetes]"
+                      name="diabetes" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Diabetes Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Diabetes Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Diabetes Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Diabetes Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\Heart Source"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Heart Source"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[heart]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT HeartDisease, BMI, Smoking, Stroke, PhysicalHealth, DiffWalking, AgeCategory, Diabetic, KidneyDisease
+FROM     dbo.heart</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\Heart Source.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LAPTOP-LVUEN91N\MSSQLSERVER1.staging1 2]"
+                  connectionManagerRefId="Package.ConnectionManagers[LAPTOP-LVUEN91N\MSSQLSERVER1.staging1 2]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\Heart Source.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Heart Source.Outputs[OLE DB Source Output].Columns[HeartDisease]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Heart Source.Outputs[OLE DB Source Output].ExternalColumns[HeartDisease]"
+                      length="255"
+                      lineageId="Package\Data Flow Task\Heart Source.Outputs[OLE DB Source Output].Columns[HeartDisease]"
+                      name="HeartDisease"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Heart Source.Outputs[OLE DB Source Output].Columns[BMI]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Heart Source.Outputs[OLE DB Source Output].ExternalColumns[BMI]"
+                      lineageId="Package\Data Flow Task\Heart Source.Outputs[OLE DB Source Output].Columns[BMI]"
+                      name="BMI"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Heart Source.Outputs[OLE DB Source Output].Columns[Smoking]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Heart Source.Outputs[OLE DB Source Output].ExternalColumns[Smoking]"
+                      length="255"
+                      lineageId="Package\Data Flow Task\Heart Source.Outputs[OLE DB Source Output].Columns[Smoking]"
+                      name="Smoking"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Heart Source.Outputs[OLE DB Source Output].Columns[Stroke]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Heart Source.Outputs[OLE DB Source Output].ExternalColumns[Stroke]"
+                      length="255"
+                      lineageId="Package\Data Flow Task\Heart Source.Outputs[OLE DB Source Output].Columns[Stroke]"
+                      name="Stroke"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Heart Source.Outputs[OLE DB Source Output].Columns[PhysicalHealth]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Heart Source.Outputs[OLE DB Source Output].ExternalColumns[PhysicalHealth]"
+                      lineageId="Package\Data Flow Task\Heart Source.Outputs[OLE DB Source Output].Columns[PhysicalHealth]"
+                      name="PhysicalHealth"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Heart Source.Outputs[OLE DB Source Output].Columns[DiffWalking]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Heart Source.Outputs[OLE DB Source Output].ExternalColumns[DiffWalking]"
+                      length="255"
+                      lineageId="Package\Data Flow Task\Heart Source.Outputs[OLE DB Source Output].Columns[DiffWalking]"
+                      name="DiffWalking"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Heart Source.Outputs[OLE DB Source Output].Columns[AgeCategory]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Heart Source.Outputs[OLE DB Source Output].ExternalColumns[AgeCategory]"
+                      length="255"
+                      lineageId="Package\Data Flow Task\Heart Source.Outputs[OLE DB Source Output].Columns[AgeCategory]"
+                      name="AgeCategory"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Heart Source.Outputs[OLE DB Source Output].Columns[Diabetic]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Heart Source.Outputs[OLE DB Source Output].ExternalColumns[Diabetic]"
+                      length="255"
+                      lineageId="Package\Data Flow Task\Heart Source.Outputs[OLE DB Source Output].Columns[Diabetic]"
+                      name="Diabetic"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Heart Source.Outputs[OLE DB Source Output].Columns[KidneyDisease]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Heart Source.Outputs[OLE DB Source Output].ExternalColumns[KidneyDisease]"
+                      length="255"
+                      lineageId="Package\Data Flow Task\Heart Source.Outputs[OLE DB Source Output].Columns[KidneyDisease]"
+                      name="KidneyDisease"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Heart Source.Outputs[OLE DB Source Output].ExternalColumns[HeartDisease]"
+                      dataType="wstr"
+                      length="255"
+                      name="HeartDisease" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Heart Source.Outputs[OLE DB Source Output].ExternalColumns[BMI]"
+                      dataType="r8"
+                      name="BMI" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Heart Source.Outputs[OLE DB Source Output].ExternalColumns[Smoking]"
+                      dataType="wstr"
+                      length="255"
+                      name="Smoking" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Heart Source.Outputs[OLE DB Source Output].ExternalColumns[Stroke]"
+                      dataType="wstr"
+                      length="255"
+                      name="Stroke" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Heart Source.Outputs[OLE DB Source Output].ExternalColumns[PhysicalHealth]"
+                      dataType="r8"
+                      name="PhysicalHealth" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Heart Source.Outputs[OLE DB Source Output].ExternalColumns[DiffWalking]"
+                      dataType="wstr"
+                      length="255"
+                      name="DiffWalking" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Heart Source.Outputs[OLE DB Source Output].ExternalColumns[AgeCategory]"
+                      dataType="wstr"
+                      length="255"
+                      name="AgeCategory" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Heart Source.Outputs[OLE DB Source Output].ExternalColumns[Diabetic]"
+                      dataType="wstr"
+                      length="255"
+                      name="Diabetic" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Heart Source.Outputs[OLE DB Source Output].ExternalColumns[KidneyDisease]"
+                      dataType="wstr"
+                      length="255"
+                      name="KidneyDisease" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Data Flow Task\Heart Source.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Heart Source.Outputs[OLE DB Source Error Output].Columns[HeartDisease]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Data Flow Task\Heart Source.Outputs[OLE DB Source Error Output].Columns[HeartDisease]"
+                      name="HeartDisease" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Heart Source.Outputs[OLE DB Source Error Output].Columns[BMI]"
+                      dataType="r8"
+                      lineageId="Package\Data Flow Task\Heart Source.Outputs[OLE DB Source Error Output].Columns[BMI]"
+                      name="BMI" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Heart Source.Outputs[OLE DB Source Error Output].Columns[Smoking]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Data Flow Task\Heart Source.Outputs[OLE DB Source Error Output].Columns[Smoking]"
+                      name="Smoking" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Heart Source.Outputs[OLE DB Source Error Output].Columns[Stroke]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Data Flow Task\Heart Source.Outputs[OLE DB Source Error Output].Columns[Stroke]"
+                      name="Stroke" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Heart Source.Outputs[OLE DB Source Error Output].Columns[PhysicalHealth]"
+                      dataType="r8"
+                      lineageId="Package\Data Flow Task\Heart Source.Outputs[OLE DB Source Error Output].Columns[PhysicalHealth]"
+                      name="PhysicalHealth" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Heart Source.Outputs[OLE DB Source Error Output].Columns[DiffWalking]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Data Flow Task\Heart Source.Outputs[OLE DB Source Error Output].Columns[DiffWalking]"
+                      name="DiffWalking" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Heart Source.Outputs[OLE DB Source Error Output].Columns[AgeCategory]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Data Flow Task\Heart Source.Outputs[OLE DB Source Error Output].Columns[AgeCategory]"
+                      name="AgeCategory" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Heart Source.Outputs[OLE DB Source Error Output].Columns[Diabetic]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Data Flow Task\Heart Source.Outputs[OLE DB Source Error Output].Columns[Diabetic]"
+                      name="Diabetic" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Heart Source.Outputs[OLE DB Source Error Output].Columns[KidneyDisease]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Data Flow Task\Heart Source.Outputs[OLE DB Source Error Output].Columns[KidneyDisease]"
+                      name="KidneyDisease" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Heart Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Heart Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Heart Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Heart Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[Brainstroke_DIM]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LAPTOP-LVUEN91N\MSSQLSERVER1.DWH_project]"
+                  connectionManagerRefId="Package.ConnectionManagers[LAPTOP-LVUEN91N\MSSQLSERVER1.DWH_project]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[age]"
+                      cachedDataType="r8"
+                      cachedName="age"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[age]"
+                      lineageId="Package\Data Flow Task\brain stroke Source.Outputs[OLE DB Source Output].Columns[age]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[hypertension]"
+                      cachedDataType="r8"
+                      cachedName="hypertension"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[hypertension]"
+                      lineageId="Package\Data Flow Task\brain stroke Source.Outputs[OLE DB Source Output].Columns[hypertension]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[heart_disease]"
+                      cachedDataType="r8"
+                      cachedName="heart_disease"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[heart_disease]"
+                      lineageId="Package\Data Flow Task\brain stroke Source.Outputs[OLE DB Source Output].Columns[heart_disease]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ever_married]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="ever_married"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ever_married]"
+                      lineageId="Package\Data Flow Task\brain stroke Source.Outputs[OLE DB Source Output].Columns[ever_married]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[avg_glucose_level]"
+                      cachedDataType="r8"
+                      cachedName="avg_glucose_level"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[avg_glucose_level]"
+                      lineageId="Package\Data Flow Task\brain stroke Source.Outputs[OLE DB Source Output].Columns[avg_glucose_level]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[bmi]"
+                      cachedDataType="r8"
+                      cachedName="bmi"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[bmi]"
+                      lineageId="Package\Data Flow Task\brain stroke Source.Outputs[OLE DB Source Output].Columns[bmi]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[smoking_status]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="smoking_status"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[smoking_status]"
+                      lineageId="Package\Data Flow Task\brain stroke Source.Outputs[OLE DB Source Output].Columns[smoking_status]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[stroke]"
+                      cachedDataType="r8"
+                      cachedName="stroke"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[stroke]"
+                      lineageId="Package\Data Flow Task\brain stroke Source.Outputs[OLE DB Source Output].Columns[stroke]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[age]"
+                      dataType="r8"
+                      name="age" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[hypertension]"
+                      dataType="r8"
+                      name="hypertension" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[heart_disease]"
+                      dataType="r8"
+                      name="heart_disease" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ever_married]"
+                      dataType="wstr"
+                      length="255"
+                      name="ever_married" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[avg_glucose_level]"
+                      dataType="r8"
+                      name="avg_glucose_level" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[bmi]"
+                      dataType="r8"
+                      name="bmi" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[smoking_status]"
+                      dataType="wstr"
+                      length="255"
+                      name="smoking_status" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[stroke]"
+                      dataType="r8"
+                      name="stroke" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\OLE DB Destination 1"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination 1"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[Diabetes_DIM]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\OLE DB Destination 1.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LAPTOP-LVUEN91N\MSSQLSERVER1.DWH_project 1]"
+                  connectionManagerRefId="Package.ConnectionManagers[LAPTOP-LVUEN91N\MSSQLSERVER1.DWH_project 1]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\OLE DB Destination 1.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[age]"
+                      cachedDataType="r8"
+                      cachedName="age"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[age]"
+                      lineageId="Package\Data Flow Task\Diabetes Source.Outputs[OLE DB Source Output].Columns[age]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[hypertension]"
+                      cachedDataType="r8"
+                      cachedName="hypertension"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[hypertension]"
+                      lineageId="Package\Data Flow Task\Diabetes Source.Outputs[OLE DB Source Output].Columns[hypertension]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[heart_disease]"
+                      cachedDataType="r8"
+                      cachedName="heart_disease"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[heart_disease]"
+                      lineageId="Package\Data Flow Task\Diabetes Source.Outputs[OLE DB Source Output].Columns[heart_disease]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[smoking_history]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="smoking_history"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[smoking_history]"
+                      lineageId="Package\Data Flow Task\Diabetes Source.Outputs[OLE DB Source Output].Columns[smoking_history]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[bmi]"
+                      cachedDataType="r8"
+                      cachedName="bmi"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[bmi]"
+                      lineageId="Package\Data Flow Task\Diabetes Source.Outputs[OLE DB Source Output].Columns[bmi]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[HbA1c_level]"
+                      cachedDataType="r8"
+                      cachedName="HbA1c_level"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[HbA1c_level]"
+                      lineageId="Package\Data Flow Task\Diabetes Source.Outputs[OLE DB Source Output].Columns[HbA1c_level]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[blood_glucose_level]"
+                      cachedDataType="r8"
+                      cachedName="blood_glucose_level"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[blood_glucose_level]"
+                      lineageId="Package\Data Flow Task\Diabetes Source.Outputs[OLE DB Source Output].Columns[blood_glucose_level]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[diabetes]"
+                      cachedDataType="r8"
+                      cachedName="diabetes"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[diabetes]"
+                      lineageId="Package\Data Flow Task\Diabetes Source.Outputs[OLE DB Source Output].Columns[diabetes]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[age]"
+                      dataType="r8"
+                      name="age" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[hypertension]"
+                      dataType="r8"
+                      name="hypertension" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[heart_disease]"
+                      dataType="r8"
+                      name="heart_disease" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[smoking_history]"
+                      dataType="wstr"
+                      length="255"
+                      name="smoking_history" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[bmi]"
+                      dataType="r8"
+                      name="bmi" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[HbA1c_level]"
+                      dataType="r8"
+                      name="HbA1c_level" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[blood_glucose_level]"
+                      dataType="r8"
+                      name="blood_glucose_level" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[diabetes]"
+                      dataType="r8"
+                      name="diabetes" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\OLE DB Destination 1.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Data Flow Task\OLE DB Destination 1.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination 1.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\OLE DB Destination 1.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination 1.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\OLE DB Destination 1.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\OLE DB Destination 2"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination 2"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[Heart_DIM]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\OLE DB Destination 2.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LAPTOP-LVUEN91N\MSSQLSERVER1.DWH_project 2]"
+                  connectionManagerRefId="Package.ConnectionManagers[LAPTOP-LVUEN91N\MSSQLSERVER1.DWH_project 2]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\OLE DB Destination 2.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination 2.Inputs[OLE DB Destination Input].Columns[HeartDisease]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="HeartDisease"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination 2.Inputs[OLE DB Destination Input].ExternalColumns[HeartDisease]"
+                      lineageId="Package\Data Flow Task\Heart Source.Outputs[OLE DB Source Output].Columns[HeartDisease]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination 2.Inputs[OLE DB Destination Input].Columns[BMI]"
+                      cachedDataType="r8"
+                      cachedName="BMI"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination 2.Inputs[OLE DB Destination Input].ExternalColumns[BMI]"
+                      lineageId="Package\Data Flow Task\Heart Source.Outputs[OLE DB Source Output].Columns[BMI]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination 2.Inputs[OLE DB Destination Input].Columns[Smoking]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Smoking"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination 2.Inputs[OLE DB Destination Input].ExternalColumns[Smoking]"
+                      lineageId="Package\Data Flow Task\Heart Source.Outputs[OLE DB Source Output].Columns[Smoking]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination 2.Inputs[OLE DB Destination Input].Columns[Stroke]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Stroke"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination 2.Inputs[OLE DB Destination Input].ExternalColumns[Stroke]"
+                      lineageId="Package\Data Flow Task\Heart Source.Outputs[OLE DB Source Output].Columns[Stroke]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination 2.Inputs[OLE DB Destination Input].Columns[PhysicalHealth]"
+                      cachedDataType="r8"
+                      cachedName="PhysicalHealth"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination 2.Inputs[OLE DB Destination Input].ExternalColumns[PhysicalHealth]"
+                      lineageId="Package\Data Flow Task\Heart Source.Outputs[OLE DB Source Output].Columns[PhysicalHealth]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination 2.Inputs[OLE DB Destination Input].Columns[DiffWalking]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="DiffWalking"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination 2.Inputs[OLE DB Destination Input].ExternalColumns[DiffWalking]"
+                      lineageId="Package\Data Flow Task\Heart Source.Outputs[OLE DB Source Output].Columns[DiffWalking]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination 2.Inputs[OLE DB Destination Input].Columns[AgeCategory]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="AgeCategory"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination 2.Inputs[OLE DB Destination Input].ExternalColumns[AgeCategory]"
+                      lineageId="Package\Data Flow Task\Heart Source.Outputs[OLE DB Source Output].Columns[AgeCategory]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination 2.Inputs[OLE DB Destination Input].Columns[Diabetic]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Diabetic"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination 2.Inputs[OLE DB Destination Input].ExternalColumns[Diabetic]"
+                      lineageId="Package\Data Flow Task\Heart Source.Outputs[OLE DB Source Output].Columns[Diabetic]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination 2.Inputs[OLE DB Destination Input].Columns[KidneyDisease]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="KidneyDisease"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination 2.Inputs[OLE DB Destination Input].ExternalColumns[KidneyDisease]"
+                      lineageId="Package\Data Flow Task\Heart Source.Outputs[OLE DB Source Output].Columns[KidneyDisease]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination 2.Inputs[OLE DB Destination Input].ExternalColumns[HeartDisease]"
+                      dataType="wstr"
+                      length="255"
+                      name="HeartDisease" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination 2.Inputs[OLE DB Destination Input].ExternalColumns[BMI]"
+                      dataType="r8"
+                      name="BMI" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination 2.Inputs[OLE DB Destination Input].ExternalColumns[Smoking]"
+                      dataType="wstr"
+                      length="255"
+                      name="Smoking" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination 2.Inputs[OLE DB Destination Input].ExternalColumns[Stroke]"
+                      dataType="wstr"
+                      length="255"
+                      name="Stroke" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination 2.Inputs[OLE DB Destination Input].ExternalColumns[PhysicalHealth]"
+                      dataType="r8"
+                      name="PhysicalHealth" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination 2.Inputs[OLE DB Destination Input].ExternalColumns[DiffWalking]"
+                      dataType="wstr"
+                      length="255"
+                      name="DiffWalking" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination 2.Inputs[OLE DB Destination Input].ExternalColumns[AgeCategory]"
+                      dataType="wstr"
+                      length="255"
+                      name="AgeCategory" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination 2.Inputs[OLE DB Destination Input].ExternalColumns[Diabetic]"
+                      dataType="wstr"
+                      length="255"
+                      name="Diabetic" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination 2.Inputs[OLE DB Destination Input].ExternalColumns[KidneyDisease]"
+                      dataType="wstr"
+                      length="255"
+                      name="KidneyDisease" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\OLE DB Destination 2.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Data Flow Task\OLE DB Destination 2.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination 2.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\OLE DB Destination 2.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination 2.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\OLE DB Destination 2.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Data Flow Task.Paths[OLE DB Source Output]"
+              endId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\Data Flow Task\brain stroke Source.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Data Flow Task.Paths[OLE DB Source Output1]"
+              endId="Package\Data Flow Task\OLE DB Destination 1.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\Data Flow Task\Diabetes Source.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Data Flow Task.Paths[OLE DB Source Output2]"
+              endId="Package\Data Flow Task\OLE DB Destination 2.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\Data Flow Task\Heart Source.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="150.4,41.6"
+          Id="Package\Data Flow Task"
+          TopLeft="434.999976232649,171.599998806715" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Data Flow Task">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="139.2,41.6"
+          Id="Package\Data Flow Task\Heart Source"
+          TopLeft="709.999989420176,69.9999989569187" />
+        <NodeLayout
+          Size="180,41.6"
+          Id="Package\Data Flow Task\OLE DB Destination 1"
+          TopLeft="395.99999409914,284.999995753169" />
+        <NodeLayout
+          Size="155.2,41.6"
+          Id="Package\Data Flow Task\Diabetes Source"
+          TopLeft="408.999993905425,69.9999989569187" />
+        <NodeLayout
+          Size="171.2,41.6"
+          Id="Package\Data Flow Task\OLE DB Destination"
+          TopLeft="132.999998018146,282.999995782971" />
+        <NodeLayout
+          Size="168,41.6"
+          Id="Package\Data Flow Task\brain stroke Source"
+          TopLeft="133.999998003244,70.9999989420176" />
+        <NodeLayout
+          Size="180,41.6"
+          Id="Package\Data Flow Task\OLE DB Destination 2"
+          TopLeft="699.999989569187,286.999995723367" />
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[OLE DB Source Output]"
+          TopLeft="218.299998010695,112.599998942018">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,170.399996840954"
+              Start="0,0"
+              End="0,162.899996840954">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,162.899996840954" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[OLE DB Source Output2]"
+          TopLeft="779.599989420176,111.599998956919">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="10.4000001490115,175.399996766448"
+              Start="0,0"
+              End="10.4000001490115,167.899996766448">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,83.699998383224" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,83.699998383224"
+                    Point2="0,87.699998383224"
+                    Point3="4,87.699998383224" />
+                  <mssgle:LineSegment
+                    End="6.40000014901148,87.699998383224" />
+                  <mssgle:CubicBezierSegment
+                    Point1="6.40000014901148,87.699998383224"
+                    Point2="10.4000001490115,87.699998383224"
+                    Point3="10.4000001490115,91.699998383224" />
+                  <mssgle:LineSegment
+                    End="10.4000001490115,167.899996766448" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[OLE DB Source Output1]"
+          TopLeft="486.299994002283,111.599998956919">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,173.39999679625"
+              Start="0,0"
+              End="0,165.89999679625">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,165.89999679625" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\Heart Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\OLE DB Destination 1">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\Diabetes Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\brain stroke Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\OLE DB Destination 2">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
